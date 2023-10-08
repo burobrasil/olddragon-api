@@ -103,11 +103,11 @@ Muitos recursos, incluindo mensagens, documentos e comentários, representam seu
 Endpoints da API
 ----------------
 <!-- START API ENDPOINTS -->
-- [Campanhas](https://github.com/burobrasil/olddragon-api/blob/master/sections/campanhas.md#campanhas)
-- [Equipamentos](https://github.com/burobrasil/olddragon-api/blob/master/sections/equipamentos.md#equipamentos)
-- [Magias](https://github.com/burobrasil/olddragon-api/blob/master/sections/magias.md#magias)
-- [Monstros](https://github.com/burobrasil/olddragon-api/blob/master/sections/monstros.md#monstros)
-- [Personagens](https://github.com/burobrasil/olddragon-api/blob/master/sections/personagens.md#personagens)
+- [Campanhas](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/campanhas.md#campanhas)
+- [Equipamentos](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/equipamentos.md#equipamentos)
+- [Magias](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/magias.md#magias)
+- [Monstros](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/monstros.md#monstros)
+- [Personagens](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/personagens.md#personagens)
 <!-- END API ENDPOINTS -->
 
 Suporte
