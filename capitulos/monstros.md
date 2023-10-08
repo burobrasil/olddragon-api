@@ -4,7 +4,7 @@ Monstros
 Endpoints:
 
 - [Listar monstros](#listar-monstros)
-- [Obter monstro específico](#obter-monstro-especfico)
+- [Obter monstro específico](#obter-monstro-específico)
 
 Listar monstros
 --------------
