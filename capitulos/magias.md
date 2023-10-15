@@ -9,20 +9,20 @@ Endpoints:
 Listar magias
 -------------
 
-* `GET /magias.json` retorna todos os magias.
+- `GET /magias.json` retorna todos os magias.
 
 _Parâmetros opcionais de URL_:
 
 Este endpoint, sem nenhum parâmetro, retorna:
 
-* `order` - ordena a lista. Opções são `name` (padrão), `reverse_name`, `circle`, `reverse_circle`.
-* `name` - filtragem parcial pelo nome. Por exemplo, se for passado `abe`, serão retornadas as magias "Abençoar" e "Arma Abençoada".
-* `schools[]` - filtragem com lista (_array_) das escolas de magias. Opções são `arcane` (Arcana), `divine` (Divina), `necromancer` (Necromante), e `illusionist` (Ilusionista). Deixe em branco ou sem este parâmetro para retornar de todas as escolas de magia. Várias podem ser informadas para retornar de mais de uma escola ao mesmo tempo.
-* `circles[]` - filtragem com lista (_array_) dos círculos da magia. Caso a magia possua mais de um círculo (como "Ampliar Plantas", que é Arcana de 4o cículo e Divina de 3o círculo), será considerado o círculo menor das magias filtradas no parâmetro `schools[]` (ou de todas caso não esteja presente). Opções são `1o`, `2o`, `3o`, `4o`, `5o`, `6o`, `7o`, `8o`, `9o`. Vários podem ser informados para retornar de mais de um círculo de magia ao mesmo tempo.
-* `sources[]` - filtragem com lista (_array_) das fontes das magias. O ID do livro (como `c520caa7-e1de-4919-b273-190be862f4eb` para o LB1) deve ser informado para referenciar o livro. Vários podem ser informados para retornar de mais de um livro ao mesmo tempo.
+- `order` - ordena a lista. Opções são `name` (padrão), `reverse_name`, `circle`, `reverse_circle`.
+- `name` - filtragem parcial pelo nome. Por exemplo, se for passado `abe`, serão retornadas as magias "Abençoar" e "Arma Abençoada".
+- `schools[]` - filtragem com lista (_array_) das escolas de magias. Opções são `arcane` (Arcana), `divine` (Divina), `necromancer` (Necromante), e `illusionist` (Ilusionista). Deixe em branco ou sem este parâmetro para retornar de todas as escolas de magia. Várias podem ser informadas para retornar de mais de uma escola ao mesmo tempo.
+- `circles[]` - filtragem com lista (_array_) dos círculos da magia. Caso a magia possua mais de um círculo (como "Ampliar Plantas", que é Arcana de 4o cículo e Divina de 3o círculo), será considerado o círculo menor das magias filtradas no parâmetro `schools[]` (ou de todas caso não esteja presente). Opções são `1o`, `2o`, `3o`, `4o`, `5o`, `6o`, `7o`, `8o`, `9o`. Vários podem ser informados para retornar de mais de um círculo de magia ao mesmo tempo.
+- `sources[]` - filtragem com lista (_array_) das fontes das magias. O ID do livro (como `c520caa7-e1de-4919-b273-190be862f4eb` para o LB1) deve ser informado para referenciar o livro. Vários podem ser informados para retornar de mais de um livro ao mesmo tempo.
 
 ###### Exemplo de resposta JSON
-<!-- START GET /magias.json -->
+<!-- START spells_index.json -->
 ```json
 {
   "data": [
@@ -121,7 +121,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
   }
 }
 ```
-<!-- END GET /magias.json -->
+<!-- END spells_index.json -->
 ###### Copiar como cURL
 
 ``` shell
@@ -131,12 +131,10 @@ curl -s https://olddragon.com.br/magias.json
 Obter magia específica
 ----------------------
 
-* `GET /magias/orc.json` retorna a magia específica para a ID informada.
-
-
+- `GET /magias/ajuda.json` retorna a magia específica para a ID informada (neste exemplo, a ID é `ajuda`).
 
 ###### Exemplo de resposta JSON
-<!-- START GET /magias/ajuda.json -->
+<!-- START spells_show.json -->
 ```json
 {
   "data": {
@@ -182,7 +180,7 @@ Obter magia específica
   }
 }
 ```
-<!-- END GET /magias/ajuda.json -->
+<!-- END spells_show.json -->
 
 ###### Copiar como cURL
 

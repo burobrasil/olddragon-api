@@ -8,10 +8,10 @@ Endpoints:
 Obter campanha específica
 ------------------------
 
-* `GET /campanhas/c958955b-8211-42cf-94a5-8276a1b052d5.json` retorna a campanha específica para a ID informada.
+- `GET /campanhas/c958955b-8211-42cf-94a5-8276a1b052d5.json` retorna a campanha específica para a ID informada (neste exemplo, a ID é `c958955b-8211-42cf-94a5-8276a1b052d5`).
 
 ###### Exemplo de resposta JSON
-<!-- START GET /campanhas/example.json -->
+<!-- START campaigns_show.json -->
 ```json
 {
   "data": {
@@ -111,7 +111,7 @@ Obter campanha específica
   }
 }
 ```
-<!-- END GET /campanhas/example.json -->
+<!-- END campaigns_show.json -->
 
 ###### Copiar como cURL
 

@@ -8,10 +8,10 @@ Endpoints:
 Obter personagem específico
 ---------------------------
 
-* `GET /personagens/972f362c-76ad-4a9b-8f08-749d9e3c09f4.json` retorna o personagem específica para a ID informada.
+- `GET /personagens/972f362c-76ad-4a9b-8f08-749d9e3c09f4.json` retorna o personagem específica para a ID informada (neste exemplo, a ID é `972f362c-76ad-4a9b-8f08-749d9e3c09f4`).
 
 ###### Exemplo de resposta JSON
-<!-- START GET /personagens/example.json -->
+<!-- START characters_show.json -->
 ```json
 {
   "data": {
@@ -55,7 +55,7 @@ Obter personagem específico
   }
 }
 ```
-<!-- END GET /personagens/example.json -->
+<!-- END characters_show.json -->
 
 ###### Copiar como cURL
 

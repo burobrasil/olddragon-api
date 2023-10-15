@@ -12,7 +12,7 @@ Listar monstros
 * `GET /monstros.json` retorna todos os monstros.
 
 ###### Exemplo de resposta JSON
-<!-- START GET /monstros.json -->
+<!-- START monsters_index.json -->
 ```json
 {
   "data": [
@@ -65,7 +65,7 @@ Listar monstros
   }
 }
 ```
-<!-- END GET /monstros.json -->
+<!-- END monsters_index.json -->
 ###### Copiar como cURL
 
 ``` shell
@@ -75,10 +75,10 @@ curl -s https://olddragon.com.br/monstros.json
 Obter monstro específico
 ------------------------
 
-* `GET /monstros/orc.json` retorna o monstro específico para a ID informada.
+- `GET /monstros/orc.json` retorna o monstro específico para a ID informada (neste exemplo, a ID é `orc`).
 
 ###### Exemplo de resposta JSON
-<!-- START GET /monstros/orc.json -->
+<!-- START monsters_show.json -->
 ```json
 {
   "data": {
@@ -120,7 +120,7 @@ Obter monstro específico
 }
 
 ```
-<!-- END GET /monstros/orc.json -->
+<!-- END monsters_show.json -->
 
 ###### Copiar como cURL
 

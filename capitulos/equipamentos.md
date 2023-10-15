@@ -9,10 +9,10 @@ Endpoints:
 Listar equipamentos
 --------------
 
-* `GET /equipamentos.json` retorna todos os equipamentos.
+- `GET /equipamentos.json` retorna todos os equipamentos.
 
 ###### Exemplo de resposta JSON
-<!-- START GET /equipamentos.json -->
+<!-- START equipment_index.json -->
 ```json
 {
   "data": [
@@ -109,7 +109,7 @@ Listar equipamentos
   }
 }
 ```
-<!-- END GET /equipamentos.json -->
+<!-- END equipment_index.json -->
 ###### Copiar como cURL
 
 ``` shell
@@ -119,10 +119,10 @@ curl -s https://olddragon.com.br/equipamentos.json
 Obter equipamento específico
 ------------------------
 
-* `GET /equipamentos/adaga.json` retorna o equipamento específico para a ID informada.
+- `GET /equipamentos/adaga.json` retorna o equipamento específico para a ID informada (neste exemplo, a ID é `adaga`)
 
 ###### Exemplo de resposta JSON
-<!-- START GET /equipamentos/adaga.json -->
+<!-- START equipment_show.json -->
 ```json
 {
   "data": {
@@ -167,7 +167,7 @@ Obter equipamento específico
   }
 }
 ```
-<!-- END GET /equipamentos/adaga.json -->
+<!-- END equipment_show.json -->
 
 ###### Copiar como cURL
 
