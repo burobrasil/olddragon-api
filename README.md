@@ -38,36 +38,28 @@ Apenas JSON
 
 Nós apenas aceitamos e usamos JSON em todas as chamadas da API. Você deve incluir o cabeçalho HTTP `Content-Type` como `Content-Type: application/json; charset=utf-8` em chamadas POST ou PUT. Todas as URLs da API tem final `.json` para indicar que retornam JSON. Você também pode optar por enviar o cabeçalho `Accept: application/json`.
 
-A API tem inspiração no protocolo JSON:API v1.1, embora não implementemos o mesmo, em prol de simplicidade e minimalismo.
-
 Paginação
 ---------
 
-Todas as coleções de resultado tem seu resultado paginado.
+Todas as coleções (listas com múltiplos itens) de resultado tem seu resultado paginado. O número de resultados pode variar conforme o tamanho da coleção. A nossa API segue a especificação [RFC5988](https://tools.ietf.org/html/rfc5988) de usar o cabeçalho HTTP `Link` para fornecer URLs para páginas relacionadas. Siga essa convenção para acessar outras páginas.
 
-Nós retornamos o JSON com a seguinte estrutura:
+Aqui está um exemplo de cabeçalho de resposta da solicitação:
 
-```json
-{
-  "data": [
-    // objetos retornados
-  ],
-  "links": {
-    "first": "/coisas.json?page=1",
-    "self": "/coisas.json?page=10",
-    "next": "/coisas.json?page=11",
-    "last": "/coisas.json?page=20"
-  },
-  "meta": {
-    "pages": 20,
-    "count": 500
-  }
-}
+```
+Link: <https://olddragon.com.br/monstros.json?page=1>; rel="first", <https://olddragon.com.br/monstros.json?page=2>; rel="next", <https://olddragon.com.br/monstros.json?page=21>; rel="last"
 ```
 
-No resultado, dentro de `links`, é possível identificar a primeira página (`first`), a própria página atual (`self`), a próxima página (`next`), e a última página da coleção (`last`). Dentro de `meta`, é possível identificar o número total de páginas (`pages`) e o número total de itens na coleção (`count`).
+No resultado, dentro de `Link`, é possível identificar a primeira página (`first`), a próxima página (`next`), e a última página da coleção (`last`).
 
-Todos os dados e paginação são sempre referentes a atual filtragem.
+Além de `Link`, também retornamos os cabeçalhos `Current-Page` com o número da página atual, `Total-Pages` com o número total de páginas, e `Total-Count` com o número total de resultados na coleção, dado os filtros aplicados de busca.
+
+Exemplo de cabeçalhos:
+
+```
+Current-Page: 1
+Total-Count: 400
+Total-Pages: 20
+```
 
 Cache HTTP
 ----------
@@ -105,6 +97,7 @@ Endpoints da API
 <!-- START API ENDPOINTS -->
 - [Campanhas](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/campanhas.md#campanhas)
 - [Equipamentos](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/equipamentos.md#equipamentos)
+- [Livros](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/livros.md#livros)
 - [Magias](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/magias.md#magias)
 - [Monstros](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/monstros.md#monstros)
 - [Personagens](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/personagens.md#personagens)
