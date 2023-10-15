@@ -23,104 +23,84 @@ Este endpoint, sem nenhum parâmetro, retorna:
 
 ###### Exemplo de resposta JSON
 <!-- START spells_index.json -->
-```json
-{
-  "data": [
-    {
-      "id": "ajuda",
-      "type": "magias",
-      "attributes": {
-        "name": "Ajuda",
-        "arcane": null,
-        "divine": 2,
-        "necromancer": null,
-        "illusionist": null,
-        "updated_at": "2023-05-31T22:12:53.030-03:00",
-        "reverse": false,
-        "access": "complete",
-        "range": "toque",
-        "duration": "2 turnos",
-        "jp": "nenhuma",
-        "description": "Esta magia concede uma ajuda de sua divindade, anulando a perda de até 1d4 pontos de vida +1 a cada 2 níveis do conjurador, do próximo dano sofrido pelo conjurador. Pontos de vida anulados que sobram após o próximo dano recebido pelo conjurador, devem ser descartados.\n"
-      },
-      "relationships": {
-        "fontes": [
-          {
-            "id": "lb1",
-            "type": "fontes",
-            "attributes": {
-              "page": 105
-            },
-            "relationships": {
-              "livro": {
-                "id": "lb1",
-                "type": "livros",
-                "links": {
-                  "self": "https://olddragon.com.br/livros/lb1.json"
-                }
-              }
-            }
-          }
-        ]
-      },
-      "links": {
-        "self": "https://olddragon.com.br/magias/ajuda.json"
+[
+  {
+    "id": "ajuda",
+    "name": "Ajuda",
+    "arcane": null,
+    "divine": 2,
+    "necromancer": null,
+    "illusionist": null,
+    "updated_at": "2023-10-15T19:51:23.702-03:00",
+    "reverse": false,
+    "access": "complete",
+    "range": "toque",
+    "duration": "2 turnos",
+    "jp": "nenhuma",
+    "description": "Esta magia concede uma ajuda de sua divindade, anulando a perda de até 1d4 pontos de vida +1 a cada 2 níveis do conjurador, do próximo dano sofrido pelo conjurador. Pontos de vida anulados que sobram após o próximo dano recebido pelo conjurador, devem ser descartados.\n",
+    "fontes": [
+      {
+        "page": 105,
+        "livro_url": "http://www.example.com/livros/lb1.json"
       }
-    },
-    {
-      "id": "bom-fruto",
-      "type": "magias",
-      "attributes": {
-        "name": "Bom Fruto",
-        "arcane": null,
-        "divine": 2,
-        "necromancer": null,
-        "illusionist": null,
-        "updated_at": "2023-05-31T22:12:53.460-03:00",
-        "reverse": false,
-        "access": "complete",
-        "range": "toque",
-        "duration": "especial",
-        "jp": "nenhuma",
-        "description": "Com esta magia, o conjurador é capaz de abençoar 2d4 frutos e torná-los mágicos. Quem comer destes frutos recuperará 1 ponto de vida perdido por nível do conjurador. A cada 24 horas, apenas 8 pontos de vida podem ser recuperados com esta magia.\n"
-      },
-      "relationships": {
-        "fontes": [
-          {
-            "id": "lb1",
-            "type": "fontes",
-            "attributes": {
-              "page": 108
-            },
-            "relationships": {
-              "livro": {
-                "id": "lb1",
-                "type": "livros",
-                "links": {
-                  "self": "https://olddragon.com.br/livros/lb1.json"
-                }
-              }
-            }
-          }
-        ]
-      },
-      "links": {
-        "self": "https://olddragon.com.br/magias/bom-fruto.json"
-      }
-    }
-  ],
-  "links": {
-    "first": "/magias.json?page=1",
-    "self": "/magias.json?page=1",
-    "next": "/magias.json?page=2",
-    "last": "/magias.json?page=10"
+    ],
+    "url": "http://www.example.com/magias/ajuda.json"
   },
-  "meta": {
-    "pages": 10,
-    "count": 100
+  {
+    "id": "escuridao",
+    "name": "Escuridão",
+    "arcane": 1,
+    "divine": null,
+    "necromancer": null,
+    "illusionist": null,
+    "updated_at": "2023-10-15T19:51:23.702-03:00",
+    "reverse": true,
+    "access": "complete",
+    "range": "especial",
+    "duration": "12 turnos",
+    "jp": "JPS nega",
+    "description": "O objeto alvo tocado produz luz tão brilhante quanto uma tocha, iluminando uma área com raio de 6 metros.\n\nSe conjurada nos olhos de um alvo a até 3m + 1,5m/nível do conjurador, a vítima que não passar em uma JPS fica cega até o final da duração da magia. Neste caso, a luz mágica se apaga e não causa nenhum outro efeito.\n\n[Escuridão] é a versão reversa que permite interromper qualquer fonte de luz, apagando tochas, velas, lâmpadas ou até mesmo dissipando uma magia Luz lançada anteriormente e criando uma área de 4,5 metros de raio de escuridão mágica, deixando todos dentro da área cegos (mesmo se possuírem Infravisão).\n\nSe conjurada nos olhos de um alvo tocado pelo conjurador, a vítima que não passar em uma JPS fica cega até o final da duração da magia.  Neste caso, a escuridão mágica some e não causa nenhum outro efeito.\n",
+    "reverse_spell": {
+      "id": "luz",
+      "name": "Luz",
+      "reverse_spell_url": "http://www.example.com/magias/luz.json"
+    },
+    "fontes": [
+      {
+        "page": 119,
+        "livro_url": "http://www.example.com/livros/lb1.json"
+      }
+    ],
+    "url": "http://www.example.com/magias/escuridao.json"
+  },
+  {
+    "id": "luz",
+    "name": "Luz",
+    "arcane": 1,
+    "divine": 1,
+    "necromancer": null,
+    "illusionist": null,
+    "updated_at": "2023-10-15T19:51:23.702-03:00",
+    "reverse": true,
+    "access": "complete",
+    "range": "especial",
+    "duration": "12 turnos",
+    "jp": "JPS nega",
+    "description": "O objeto alvo tocado produz luz tão brilhante quanto uma tocha, iluminando uma área com raio de 6 metros.\n\nSe conjurada nos olhos de um alvo a até 3m + 1,5m/nível do conjurador, a vítima que não passar em uma JPS fica cega até o final da duração da magia. Neste caso, a luz mágica se apaga e não causa nenhum outro efeito.\n\n[Escuridão] é a versão reversa que permite interromper qualquer fonte de luz, apagando tochas, velas, lâmpadas ou até mesmo dissipando uma magia Luz lançada anteriormente e criando uma área de 4,5 metros de raio de escuridão mágica, deixando todos dentro da área cegos (mesmo se possuírem Infravisão).\n\nSe conjurada nos olhos de um alvo tocado pelo conjurador, a vítima que não passar em uma JPS fica cega até o final da duração da magia.  Neste caso, a escuridão mágica some e não causa nenhum outro efeito.\n",
+    "reverse_spell": {
+      "id": "escuridao",
+      "name": "Escuridão",
+      "reverse_spell_url": "http://www.example.com/magias/escuridao.json"
+    },
+    "fontes": [
+      {
+        "page": 119,
+        "livro_url": "http://www.example.com/livros/lb1.json"
+      }
+    ],
+    "url": "http://www.example.com/magias/luz.json"
   }
-}
-```
+]
 <!-- END spells_index.json -->
 ###### Copiar como cURL
 
@@ -135,51 +115,33 @@ Obter magia específica
 
 ###### Exemplo de resposta JSON
 <!-- START spells_show.json -->
-```json
 {
-  "data": {
-    "id": "ajuda",
-    "type": "magias",
-    "attributes": {
-      "name": "Ajuda",
-      "arcane": null,
-      "divine": 2,
-      "necromancer": null,
-      "illusionist": null,
-      "updated_at": "2023-05-31T22:12:53.030-03:00",
-      "reverse": false,
-      "access": "complete",
-      "range": "toque",
-      "duration": "2 turnos",
-      "jp": "nenhuma",
-      "description": "Esta magia concede uma ajuda de sua divindade, anulando a perda de até 1d4 pontos de vida +1 a cada 2 níveis do conjurador, do próximo dano sofrido pelo conjurador. Pontos de vida anulados que sobram após o próximo dano recebido pelo conjurador, devem ser descartados.\n"
-    },
-    "relationships": {
-      "fontes": [
-        {
-          "id": "lb1",
-          "type": "fontes",
-          "attributes": {
-            "page": 105
-          },
-          "relationships": {
-            "livro": {
-              "id": "lb1",
-              "type": "livros",
-              "links": {
-                "self": "https://olddragon.com.br/livros/lb1.json"
-              }
-            }
-          }
-        }
-      ]
-    },
-    "links": {
-      "self": "https://olddragon.com.br/magias/ajuda.json"
+  "id": "luz",
+  "name": "Luz",
+  "arcane": 1,
+  "divine": 1,
+  "necromancer": null,
+  "illusionist": null,
+  "updated_at": "2023-10-15T19:51:23.733-03:00",
+  "reverse": true,
+  "access": "complete",
+  "range": "especial",
+  "duration": "12 turnos",
+  "jp": "JPS nega",
+  "description": "O objeto alvo tocado produz luz tão brilhante quanto uma tocha, iluminando uma área com raio de 6 metros.\n\nSe conjurada nos olhos de um alvo a até 3m + 1,5m/nível do conjurador, a vítima que não passar em uma JPS fica cega até o final da duração da magia. Neste caso, a luz mágica se apaga e não causa nenhum outro efeito.\n\n[Escuridão] é a versão reversa que permite interromper qualquer fonte de luz, apagando tochas, velas, lâmpadas ou até mesmo dissipando uma magia Luz lançada anteriormente e criando uma área de 4,5 metros de raio de escuridão mágica, deixando todos dentro da área cegos (mesmo se possuírem Infravisão).\n\nSe conjurada nos olhos de um alvo tocado pelo conjurador, a vítima que não passar em uma JPS fica cega até o final da duração da magia.  Neste caso, a escuridão mágica some e não causa nenhum outro efeito.\n",
+  "reverse_spell": {
+    "id": "escuridao",
+    "name": "Escuridão",
+    "reverse_spell_url": "http://www.example.com/magias/escuridao.json"
+  },
+  "fontes": [
+    {
+      "page": 119,
+      "livro_url": "http://www.example.com/livros/lb1.json"
     }
-  }
+  ],
+  "url": "http://www.example.com/magias/luz.json"
 }
-```
 <!-- END spells_show.json -->
 
 ###### Copiar como cURL
@@ -190,6 +152,6 @@ curl -s https://olddragon.com.br/magias/ajuda.json
 
 ### Observações sobre atributos
 
-O atributo `reverse` denota que esta magia possui uma magia reversa. Por exemplo, a magia "Abrir" retorna com `attributes.reverse` positiva, bem como uma `relationships.reverse_spell` apontando para a magia reversa "Trancar".
+Os atributos `reverse` e `reverse_spell` denotam que esta magia possui uma versão reversa. Por exemplo, a magia [Luz](https://olddragon.com.br/magias/luz) retorna `reverse: true` e com `reverse_spell` apontando para a sua magia reversa [Escuridão](https://olddragon.com.br/magias/escuridao).
 
 O atributo `access` é explicado em [Acesso](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/acesso.md#acesso).
