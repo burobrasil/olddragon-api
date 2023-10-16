@@ -31,7 +31,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "divine": 2,
     "necromancer": null,
     "illusionist": null,
-    "updated_at": "2023-10-15T19:51:23.702-03:00",
+    "updated_at": "2023-01-01T00:00:00.000",
     "reverse": false,
     "access": "complete",
     "range": "toque",
@@ -41,10 +41,10 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "fontes": [
       {
         "page": 105,
-        "livro_url": "http://www.example.com/livros/lb1.json"
+        "livro_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
-    "url": "http://www.example.com/magias/ajuda.json"
+    "url": "https://olddragon.com.br/magias/ajuda.json"
   },
   {
     "id": "escuridao",
@@ -53,7 +53,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "divine": null,
     "necromancer": null,
     "illusionist": null,
-    "updated_at": "2023-10-15T19:51:23.702-03:00",
+    "updated_at": "2023-01-01T00:00:00.000",
     "reverse": true,
     "access": "complete",
     "range": "especial",
@@ -63,15 +63,15 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "reverse_spell": {
       "id": "luz",
       "name": "Luz",
-      "reverse_spell_url": "http://www.example.com/magias/luz.json"
+      "reverse_spell_url": "https://olddragon.com.br/magias/luz.json"
     },
     "fontes": [
       {
         "page": 119,
-        "livro_url": "http://www.example.com/livros/lb1.json"
+        "livro_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
-    "url": "http://www.example.com/magias/escuridao.json"
+    "url": "https://olddragon.com.br/magias/escuridao.json"
   },
   {
     "id": "luz",
@@ -80,7 +80,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "divine": 1,
     "necromancer": null,
     "illusionist": null,
-    "updated_at": "2023-10-15T19:51:23.702-03:00",
+    "updated_at": "2023-01-01T00:00:00.000",
     "reverse": true,
     "access": "complete",
     "range": "especial",
@@ -90,15 +90,15 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "reverse_spell": {
       "id": "escuridao",
       "name": "Escuridão",
-      "reverse_spell_url": "http://www.example.com/magias/escuridao.json"
+      "reverse_spell_url": "https://olddragon.com.br/magias/escuridao.json"
     },
     "fontes": [
       {
         "page": 119,
-        "livro_url": "http://www.example.com/livros/lb1.json"
+        "livro_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
-    "url": "http://www.example.com/magias/luz.json"
+    "url": "https://olddragon.com.br/magias/luz.json"
   }
 ]
 <!-- END spells_index.json -->
@@ -122,7 +122,7 @@ Obter magia específica
   "divine": 1,
   "necromancer": null,
   "illusionist": null,
-  "updated_at": "2023-10-15T19:51:23.733-03:00",
+  "updated_at": "2023-01-01T00:00:00.000",
   "reverse": true,
   "access": "complete",
   "range": "especial",
@@ -132,15 +132,15 @@ Obter magia específica
   "reverse_spell": {
     "id": "escuridao",
     "name": "Escuridão",
-    "reverse_spell_url": "http://www.example.com/magias/escuridao.json"
+    "reverse_spell_url": "https://olddragon.com.br/magias/escuridao.json"
   },
   "fontes": [
     {
       "page": 119,
-      "livro_url": "http://www.example.com/livros/lb1.json"
+      "livro_url": "https://olddragon.com.br/livros/lb1.json"
     }
   ],
-  "url": "http://www.example.com/magias/luz.json"
+  "url": "https://olddragon.com.br/magias/luz.json"
 }
 <!-- END spells_show.json -->
 

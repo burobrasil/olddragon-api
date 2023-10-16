@@ -16,18 +16,18 @@ Listar livros
 [
   {
     "id": "lb1",
-    "title": "Livro 1",
-    "url": "http://www.example.com/livros/lb1.json"
+    "title": "Livro I: Regras Básicas",
+    "url": "https://olddragon.com.br/livros/lb1.json"
   },
   {
     "id": "lb2",
-    "title": "Livro 2",
-    "url": "http://www.example.com/livros/lb2.json"
+    "title": "Livro II: Regras Expandidas",
+    "url": "https://olddragon.com.br/livros/lb2.json"
   },
   {
     "id": "lb3",
-    "title": "Livro 3",
-    "url": "http://www.example.com/livros/lb3.json"
+    "title": "Livro III: Monstros & Inimigos",
+    "url": "https://olddragon.com.br/livros/lb3.json"
   }
 ]
 <!-- END digital_items_index.json -->
@@ -46,8 +46,8 @@ Obter livro específico
 <!-- START digital_items_show.json -->
 {
   "id": "lb1",
-  "title": "Livro 1",
-  "url": "http://www.example.com/livros/lb1.json"
+  "title": "Livro I: Regras Básicas",
+  "url": "https://olddragon.com.br/livros/lb1.json"
 }
 <!-- END digital_items_show.json -->
 
