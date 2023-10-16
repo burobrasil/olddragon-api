@@ -113,7 +113,7 @@ curl -s https://olddragon.com.br/magias.json
 Obter magia específica
 ----------------------
 
-- `GET /magias/ajuda.json` retorna a magia específica para a ID informada (neste exemplo, a ID é `ajuda`).
+- `GET /magias/luz.json` retorna a magia específica para a ID informada (neste exemplo, a ID é `luz`).
 
 ###### Exemplo de resposta JSON
 <!-- START spells_show.json -->
@@ -151,7 +151,7 @@ Obter magia específica
 ###### Copiar como cURL
 
 ``` shell
-curl -s https://olddragon.com.br/magias/ajuda.json
+curl -s https://olddragon.com.br/magias/luz.json
 ```
 
 ### Observações sobre atributos
