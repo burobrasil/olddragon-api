@@ -29,6 +29,11 @@ Listar livros
     "id": "lb3",
     "title": "Livro III: Monstros & Inimigos",
     "url": "https://olddragon.com.br/livros/lb3.json"
+  },
+  {
+    "id": "srd",
+    "title": "SRD: Documento de Referência",
+    "url": "https://olddragon.com.br/livros/srd.json"
   }
 ]
 ```

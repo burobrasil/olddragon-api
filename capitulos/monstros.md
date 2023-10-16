@@ -28,7 +28,11 @@ Listar monstros
     "variant": false,
     "access": "limited",
     "fontes": [
-
+      {
+        "page": 114,
+        "compact": false,
+        "livro_url": "https://olddragon.com.br/livros/lb3.json"
+      }
     ],
     "url": "https://olddragon.com.br/monstros/abelhas-assassinas.json"
   },
@@ -43,9 +47,44 @@ Listar monstros
     ],
     "alignment": "caotico",
     "variant": false,
-    "access": "limited",
+    "access": "partial",
+    "description": "  * **Classe de armadura**: possuem CA 11 ou 14 quando usam armadura de couro e escudo.\n\n  * **Infravisão**: 18 metros.",
+    "encounters": "2d4",
+    "encounters_lair": "1d6x10",
+    "xp": "15",
+    "treasure": "s",
+    "treasure_lair": "b+c",
+    "mv": 9,
+    "mvc": null,
+    "mve": null,
+    "mvn": null,
+    "mvv": null,
+    "mvo": null,
+    "dv_bonus": "1",
+    "pv": "6",
+    "ca": "11/14",
+    "jp": "5",
+    "mo": 9,
+    "dv": "1",
+    "described_attacks": [
+      "1 × arma + 3 (arma + 0)"
+    ],
     "fontes": [
-
+      {
+        "page": 177,
+        "compact": true,
+        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      },
+      {
+        "page": 141,
+        "compact": false,
+        "livro_url": "https://olddragon.com.br/livros/lb3.json"
+      },
+      {
+        "page": null,
+        "compact": true,
+        "livro_url": "https://olddragon.com.br/livros/srd.json"
+      }
     ],
     "url": "https://olddragon.com.br/monstros/orc.json"
   }
@@ -77,9 +116,44 @@ Obter monstro específico
   ],
   "alignment": "caotico",
   "variant": false,
-  "access": "limited",
+  "access": "partial",
+  "description": "  * **Classe de armadura**: possuem CA 11 ou 14 quando usam armadura de couro e escudo.\n\n  * **Infravisão**: 18 metros.",
+  "encounters": "2d4",
+  "encounters_lair": "1d6x10",
+  "xp": "15",
+  "treasure": "s",
+  "treasure_lair": "b+c",
+  "mv": 9,
+  "mvc": null,
+  "mve": null,
+  "mvn": null,
+  "mvv": null,
+  "mvo": null,
+  "dv_bonus": "1",
+  "pv": "6",
+  "ca": "11/14",
+  "jp": "5",
+  "mo": 9,
+  "dv": "1",
+  "described_attacks": [
+    "1 × arma + 3 (arma + 0)"
+  ],
   "fontes": [
-
+    {
+      "page": 177,
+      "compact": true,
+      "livro_url": "https://olddragon.com.br/livros/lb1.json"
+    },
+    {
+      "page": 141,
+      "compact": false,
+      "livro_url": "https://olddragon.com.br/livros/lb3.json"
+    },
+    {
+      "page": null,
+      "compact": true,
+      "livro_url": "https://olddragon.com.br/livros/srd.json"
+    }
   ],
   "url": "https://olddragon.com.br/monstros/orc.json"
 }
