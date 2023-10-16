@@ -23,6 +23,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
 
 ###### Exemplo de resposta JSON
 <!-- START spells_index.json -->
+```json
 [
   {
     "id": "ajuda",
@@ -101,6 +102,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "url": "https://olddragon.com.br/magias/luz.json"
   }
 ]
+```
 <!-- END spells_index.json -->
 ###### Copiar como cURL
 
@@ -115,6 +117,7 @@ Obter magia específica
 
 ###### Exemplo de resposta JSON
 <!-- START spells_show.json -->
+```json
 {
   "id": "luz",
   "name": "Luz",
@@ -142,6 +145,7 @@ Obter magia específica
   ],
   "url": "https://olddragon.com.br/magias/luz.json"
 }
+```
 <!-- END spells_show.json -->
 
 ###### Copiar como cURL

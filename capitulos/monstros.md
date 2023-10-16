@@ -13,6 +13,7 @@ Listar monstros
 
 ###### Exemplo de resposta JSON
 <!-- START monsters_index.json -->
+```json
 [
   {
     "id": "abelhas-assassinas",
@@ -49,6 +50,7 @@ Listar monstros
     "url": "https://olddragon.com.br/monstros/orc.json"
   }
 ]
+```
 <!-- END monsters_index.json -->
 ###### Copiar como cURL
 
@@ -63,6 +65,7 @@ Obter monstro específico
 
 ###### Exemplo de resposta JSON
 <!-- START monsters_show.json -->
+```json
 {
   "id": "orc",
   "name": "Orc",
@@ -80,6 +83,7 @@ Obter monstro específico
   ],
   "url": "https://olddragon.com.br/monstros/orc.json"
 }
+```
 <!-- END monsters_show.json -->
 
 ###### Copiar como cURL

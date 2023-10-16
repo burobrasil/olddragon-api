@@ -13,6 +13,7 @@ Listar livros
 
 ###### Exemplo de resposta JSON
 <!-- START digital_items_index.json -->
+```json
 [
   {
     "id": "lb1",
@@ -30,6 +31,7 @@ Listar livros
     "url": "https://olddragon.com.br/livros/lb3.json"
   }
 ]
+```
 <!-- END digital_items_index.json -->
 ###### Copiar como cURL
 
@@ -44,11 +46,13 @@ Obter livro específico
 
 ###### Exemplo de resposta JSON
 <!-- START digital_items_show.json -->
+```json
 {
   "id": "lb1",
   "title": "Livro I: Regras Básicas",
   "url": "https://olddragon.com.br/livros/lb1.json"
 }
+```
 <!-- END digital_items_show.json -->
 
 ###### Copiar como cURL

@@ -13,6 +13,7 @@ Listar equipamentos
 
 ###### Exemplo de resposta JSON
 <!-- START equipment_index.json -->
+```json
 [
   {
     "id": "adaga",
@@ -75,6 +76,7 @@ Listar equipamentos
     "url": "https://olddragon.com.br/equipamentos/tocha.json"
   }
 ]
+```
 <!-- END equipment_index.json -->
 ###### Copiar como cURL
 
@@ -89,6 +91,7 @@ Obter equipamento específico
 
 ###### Exemplo de resposta JSON
 <!-- START equipment_show.json -->
+```json
 {
   "id": "adaga",
   "name": "Adaga",
@@ -109,6 +112,7 @@ Obter equipamento específico
   ],
   "url": "https://olddragon.com.br/equipamentos/adaga.json"
 }
+```
 <!-- END equipment_show.json -->
 
 ###### Copiar como cURL
