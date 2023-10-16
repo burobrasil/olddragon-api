@@ -9,107 +9,75 @@ Endpoints:
 Listar equipamentos
 --------------
 
-* `GET /equipamentos.json` retorna todos os equipamentos.
+- `GET /equipamentos.json` retorna todos os equipamentos.
 
 ###### Exemplo de resposta JSON
-<!-- START GET /equipamentos.json -->
+<!-- START equipment_index.json -->
 ```json
-{
-  "data": [
-    {
-      "id": "adaga",
-      "type": "equipamentos",
-      "attributes": {
-        "name": "Adaga",
-        "concept": "weapon",
-        "updated_at": "2023-05-31T21:58:15.299-03:00",
-        "access": "complete",
-        "cost": 200,
-        "damage": "1d4",
-        "bonus_ca": null,
-        "weight_in_load": 1,
-        "weight_in_grams": null,
-        "description": "Pequena, Perfurante, Arremesso (9)",
-        "picture": "https://public.olddragon.com.br/example"
-      },
-      "relationships": {
-        "fontes": [
-          {
-            "id": "lb1",
-            "type": "fontes",
-            "attributes": {
-              "page": 58
-            },
-            "relationships": {
-              "livro": {
-                "id": "lb1",
-                "type": "livros",
-                "links": {
-                  "self": "https://olddragon.com.br/livros/lb1.json"
-                }
-              }
-            }
-          }
-        ]
-      },
-      "links": {
-        "self": "https://olddragon.com.br/equipamentos/adaga.json"
+[
+  {
+    "id": "adaga",
+    "name": "Adaga",
+    "concept": "weapon",
+    "updated_at": "2023-01-01T00:00:00.000",
+    "access": "complete",
+    "cost": 200,
+    "damage": "1d4",
+    "bonus_ca": null,
+    "weight_in_load": 1,
+    "weight_in_grams": null,
+    "description": "Pequena, Perfurante, Arremesso (9)\n",
+    "fontes": [
+      {
+        "page": 58,
+        "livro_url": "https://olddragon.com.br/livros/lb1.json"
       }
-    },
-    {
-      "id": "arco-longo",
-      "type": "equipamentos",
-      "attributes": {
-        "name": "Arco Longo",
-        "concept": "weapon",
-        "updated_at": "2023-05-31T21:58:20.800-03:00",
-        "access": "complete",
-        "cost": 6000,
-        "damage": null,
-        "bonus_ca": null,
-        "weight_in_load": 3,
-        "weight_in_grams": null,
-        "description": "Grande, Disparo (45), Duas Mãos",
-        "picture": "https://public.olddragon.com.br/example"
-      },
-      "relationships": {
-        "fontes": [
-          {
-            "id": "lb1",
-            "type": "fontes",
-            "attributes": {
-              "page": 58
-            },
-            "relationships": {
-              "livro": {
-                "id": "lb1",
-                "type": "livros",
-                "links": {
-                  "self": "https://olddragon.com.br/livros/lb1.json"
-                }
-              }
-            }
-          }
-        ]
-      },
-      "links": {
-        "self": "https://olddragon.com.br/equipamentos/arco-longo.json"
-      }
-    }
-  ],
-  "links": {
-    "first": "/equipamentos.json?page=1",
-    "self": "/equipamentos.json?page=1",
-    "next": "/equipamentos.json?page=2",
-    "last": "/equipamentos.json?page=10"
+    ],
+    "url": "https://olddragon.com.br/equipamentos/adaga.json"
   },
-  "meta": {
-    "pages": 10,
-    "count": 100
+  {
+    "id": "escudo",
+    "name": "Escudo",
+    "concept": "shield",
+    "updated_at": "2023-01-01T00:00:00.000",
+    "access": "complete",
+    "cost": 800,
+    "damage": null,
+    "bonus_ca": 1,
+    "weight_in_load": 1,
+    "weight_in_grams": null,
+    "description": "Leve, Mão Exclusiva, Madeira.\n",
+    "fontes": [
+      {
+        "page": 60,
+        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      }
+    ],
+    "url": "https://olddragon.com.br/equipamentos/escudo.json"
+  },
+  {
+    "id": "tocha",
+    "name": "Tocha",
+    "concept": "misc",
+    "updated_at": "2023-01-01T00:00:00.000",
+    "access": "complete",
+    "cost": 100,
+    "damage": null,
+    "bonus_ca": null,
+    "weight_in_load": null,
+    "weight_in_grams": 500,
+    "description": "5 unidades.\n",
+    "fontes": [
+      {
+        "page": 62,
+        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      }
+    ],
+    "url": "https://olddragon.com.br/equipamentos/tocha.json"
   }
-}
+]
 ```
-<!-- END GET /equipamentos.json -->
+<!-- END equipment_index.json -->
 ###### Copiar como cURL
 
 ``` shell
@@ -119,55 +87,33 @@ curl -s https://olddragon.com.br/equipamentos.json
 Obter equipamento específico
 ------------------------
 
-* `GET /equipamentos/adaga.json` retorna o equipamento específico para a ID informada.
+- `GET /equipamentos/adaga.json` retorna o equipamento específico para a ID informada (neste exemplo, a ID é `adaga`)
 
 ###### Exemplo de resposta JSON
-<!-- START GET /equipamentos/adaga.json -->
+<!-- START equipment_show.json -->
 ```json
 {
-  "data": {
-    "id": "adaga",
-    "type": "equipamentos",
-    "attributes": {
-      "name": "Adaga",
-      "concept": "weapon",
-      "updated_at": "2023-05-31T21:58:15.299-03:00",
-      "access": "complete",
-      "cost": 200,
-      "damage": "1d4",
-      "bonus_ca": null,
-      "weight_in_load": 1,
-      "weight_in_grams": null,
-      "description": "Pequena, Perfurante, Arremesso (9)",
-      "picture": "https://public.olddragon.com.br/example"
-    },
-    "relationships": {
-      "fontes": [
-        {
-          "id": "lb1",
-          "type": "fontes",
-          "attributes": {
-            "page": 58
-          },
-          "relationships": {
-            "livro": {
-              "id": "lb1",
-              "type": "livros",
-              "links": {
-                "self": "https://olddragon.com.br/livros/lb1.json"
-              }
-            }
-          }
-        }
-      ]
-    },
-    "links": {
-      "self": "https://olddragon.com.br/equipamentos/adaga.json"
+  "id": "adaga",
+  "name": "Adaga",
+  "concept": "weapon",
+  "updated_at": "2023-01-01T00:00:00.000",
+  "access": "complete",
+  "cost": 200,
+  "damage": "1d4",
+  "bonus_ca": null,
+  "weight_in_load": 1,
+  "weight_in_grams": null,
+  "description": "Pequena, Perfurante, Arremesso (9)\n",
+  "fontes": [
+    {
+      "page": 58,
+      "livro_url": "https://olddragon.com.br/livros/lb1.json"
     }
-  }
+  ],
+  "url": "https://olddragon.com.br/equipamentos/adaga.json"
 }
 ```
-<!-- END GET /equipamentos/adaga.json -->
+<!-- END equipment_show.json -->
 
 ###### Copiar como cURL
 

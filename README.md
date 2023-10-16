@@ -19,7 +19,19 @@ curl -A 'MinhaAplicacao (seunome@example.com)' https://olddragon.com.br/monstros
 Autenticação
 ------------
 
-Ainda estamos desenvolvendo um sistema de autenticação para APIs. Portanto, todas as chamadas feitas via API por enquato terão acesso como um usuário visitante, não-logado. Logo, você terá acesso apenas a monstros gratuitos e públicos.
+Para autenticar você deve usar o protocolo de autenticação [OAuth 2.0](https://oauth.net/2/). OAuth 2.0 permite que os usuários autorizem seu aplicativo a usar o Old Dragon Online em seu nome sem precisar copiar/colar tokens de API ou tocar em informações de login confidenciais, de maneira prática e segura para todas as partes.
+
+Recomendamos fortemente que aplicações que integrem conosco façam uso de bibliotecas existentes para integração OAuth 2.0, já que o protocolo tem diversos detalhes e nuâncias que podem abrir brechas de segurança para sua aplicação e usuários em casos de descuido.
+
+O primeiro passo é cadastrar sua aplicação conosco. Para isso, envie um email para odonline@olddragon.com.br informando:
+
+- O nome da sua aplicação
+- Descrição do que sua aplicação faz ou irá fazer
+- Uma URL de resposta para sua aplicação (exemplo: `https://example.org/callback`)
+
+Você precisa ter uma conta em [olddragon.com.br](https://olddragon.com.br) usando o mesmo endereço de email remetente, assim iremos vincular à sua conta. Em breve, você poderá criar e gerenciar suas aplicações no próprio site, sem precisar entrar em contato conosco por email.
+
+A autenticação de usuários é importante para que os mesmos acessem conteúdos digitais exclusivos de suas contas, como monstros, equipamentos, magias e livros digitais que adquiriram em suas contas. Por exemplo, o monstro [Normósia](https://olddragon.com.br/monstros/normosia) é exclusivo do livro [ARKHI](https://olddragon.com.br/livros/arkhi), e somente usuários que compraram este livro digital tem acesso a este monstro no Old Dragon Online. A autenticação também é primordial para, por exemplo, listar campanhas e personagens, já que estes somente são possíveis de listar se soubermos qual usuário que está tentando listar suas campanhas e personagens.
 
 Identifique sua aplicação
 -------------------------
@@ -27,9 +39,9 @@ Identifique sua aplicação
 Você deve incluir o cabeçalho HTTP `User-Agent` com ambos os dados:
 
 * O nome da sua aplicação
-* Um endereço de email para contactar o desenvolvedor
+* Um endereço de email para contactar o desenvolvedor, ou o endereço de sua aplicação.
 
-Nós usamos estas informações para poder entrar em contato com você caso haja algum problema, ou para reconhecer o seu trabalho. Exemplo: `User-Agent: O Maravilhoso Gerador de Personagens (magodesenvolvedor@example.com)`
+Nós usamos estas informações para poder entrar em contato com você caso haja algum problema, ou para reconhecer o seu trabalho. Exemplo: `User-Agent: O Maravilhoso Gerador de Personagens (magodesenvolvedor@example.com)` ou `User-Agent: Gerador de Encontros Aleatórios (https://example.org/gerador)`.
 
 Se você não incluir um cabeçalho `User-Agent`, você poderá receber o erro `400 Bad Request`.
 
@@ -38,36 +50,28 @@ Apenas JSON
 
 Nós apenas aceitamos e usamos JSON em todas as chamadas da API. Você deve incluir o cabeçalho HTTP `Content-Type` como `Content-Type: application/json; charset=utf-8` em chamadas POST ou PUT. Todas as URLs da API tem final `.json` para indicar que retornam JSON. Você também pode optar por enviar o cabeçalho `Accept: application/json`.
 
-A API tem inspiração no protocolo JSON:API v1.1, embora não implementemos o mesmo, em prol de simplicidade e minimalismo.
-
 Paginação
 ---------
 
-Todas as coleções de resultado tem seu resultado paginado.
+Todas as coleções (listas com múltiplos itens) de resultado tem seu resultado paginado. O número de resultados pode variar conforme o tamanho da coleção. A nossa API segue a especificação [RFC5988](https://tools.ietf.org/html/rfc5988) de usar o cabeçalho HTTP `Link` para fornecer URLs para páginas relacionadas. Siga essa convenção para acessar outras páginas.
 
-Nós retornamos o JSON com a seguinte estrutura:
+Aqui está um exemplo de cabeçalho de resposta da solicitação:
 
-```json
-{
-  "data": [
-    // objetos retornados
-  ],
-  "links": {
-    "first": "/coisas.json?page=1",
-    "self": "/coisas.json?page=10",
-    "next": "/coisas.json?page=11",
-    "last": "/coisas.json?page=20"
-  },
-  "meta": {
-    "pages": 20,
-    "count": 500
-  }
-}
+```
+Link: <https://olddragon.com.br/monstros.json?page=1>; rel="first", <https://olddragon.com.br/monstros.json?page=2>; rel="next", <https://olddragon.com.br/monstros.json?page=21>; rel="last"
 ```
 
-No resultado, dentro de `links`, é possível identificar a primeira página (`first`), a própria página atual (`self`), a próxima página (`next`), e a última página da coleção (`last`). Dentro de `meta`, é possível identificar o número total de páginas (`pages`) e o número total de itens na coleção (`count`).
+No resultado, dentro de `Link`, é possível identificar a primeira página (`first`), a próxima página (`next`), e a última página da coleção (`last`).
 
-Todos os dados e paginação são sempre referentes a atual filtragem.
+Além de `Link`, também retornamos os cabeçalhos `Current-Page` com o número da página atual, `Total-Pages` com o número total de páginas, e `Total-Count` com o número total de resultados na coleção, dado os filtros aplicados de busca.
+
+Exemplo de cabeçalhos:
+
+```
+Current-Page: 1
+Total-Count: 400
+Total-Pages: 20
+```
 
 Cache HTTP
 ----------
@@ -105,6 +109,7 @@ Endpoints da API
 <!-- START API ENDPOINTS -->
 - [Campanhas](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/campanhas.md#campanhas)
 - [Equipamentos](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/equipamentos.md#equipamentos)
+- [Livros](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/livros.md#livros)
 - [Magias](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/magias.md#magias)
 - [Monstros](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/monstros.md#monstros)
 - [Personagens](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/personagens.md#personagens)
