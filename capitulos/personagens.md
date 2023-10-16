@@ -8,51 +8,45 @@ Endpoints:
 Obter personagem específico
 ---------------------------
 
-- `GET /personagens/972f362c-76ad-4a9b-8f08-749d9e3c09f4.json` retorna o personagem específica para a ID informada (neste exemplo, a ID é `972f362c-76ad-4a9b-8f08-749d9e3c09f4`).
+- `GET /personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json` retorna o personagem específica para a ID informada (neste exemplo, a ID é `59a2adaf-96e6-4569-827b-a172982cf13c`).
 
 ###### Exemplo de resposta JSON
 <!-- START characters_show.json -->
 ```json
 {
-  "data": {
-    "id": "972f362c-76ad-4a9b-8f08-749d9e3c09f4",
-    "type": "personagens",
-    "attributes": {
-      "name": "Draco",
-      "level": 10,
-      "health_points": 8,
-      "max_hp": 51,
-      "forca": 14,
-      "destreza": 15,
-      "constituicao": 13,
-      "inteligencia": 11,
-      "sabedoria": 12,
-      "carisma": 10,
-      "mod_forca": 1,
-      "mod_destreza": 2,
-      "mod_constituicao": 1,
-      "mod_inteligencia": 0,
-      "mod_sabedoria": 0,
-      "mod_carisma": 0,
-      "ac": 14,
-      "bac": 6,
-      "bad": 7,
-      "jpd": 14,
-      "jpc": 12,
-      "jps": 11,
-      "current_movement": 6,
-      "movement_run": 12,
-      "movement_climb": 4,
-      "movement_swim": 3,
-      "created_at": "2023-07-26T22:24:54.106-03:00",
-      "updated_at": "2023-08-08T10:49:54.894-03:00",
-      "race": "elfo",
-      "class": "assassino"
-    },
-    "links": {
-      "self": "https://olddragon.com.br/personagens/972f362c-76ad-4a9b-8f08-749d9e3c09f4.json"
-    }
-  }
+  "id": "59a2adaf-96e6-4569-827b-a172982cf13c",
+  "name": "Guert",
+  "level": 1,
+  "health_points": 10,
+  "max_hp": 10,
+  "forca": 10,
+  "destreza": 10,
+  "constituicao": 10,
+  "inteligencia": 10,
+  "sabedoria": 10,
+  "carisma": 10,
+  "mod_forca": 0,
+  "mod_destreza": 0,
+  "mod_constituicao": 0,
+  "mod_inteligencia": 0,
+  "mod_sabedoria": 0,
+  "mod_carisma": 0,
+  "ac": 10,
+  "bac": 1,
+  "bad": 1,
+  "jpd": 5,
+  "jpc": 6,
+  "jps": 5,
+  "current_movement": 9,
+  "movement_run": 18,
+  "movement_climb": 7,
+  "movement_swim": 4,
+  "created_at": "2023-01-01T00:00:00.000",
+  "updated_at": "2023-01-01T00:00:00.000",
+  "race": "humano",
+  "class": "guerreiro",
+  "campanha_url": "https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json",
+  "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json"
 }
 ```
 <!-- END characters_show.json -->
@@ -60,5 +54,5 @@ Obter personagem específico
 ###### Copiar como cURL
 
 ``` shell
-curl -s https://olddragon.com.br/personagens/972f362c-76ad-4a9b-8f08-749d9e3c09f4.json
+curl -s https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
 ```
