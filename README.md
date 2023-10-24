@@ -21,17 +21,7 @@ Autenticação
 
 Para autenticar você deve usar o protocolo de autenticação [OAuth 2.0](https://oauth.net/2/). OAuth 2.0 permite que os usuários autorizem seu aplicativo a usar o Old Dragon Online em seu nome sem precisar copiar/colar tokens de API ou tocar em informações de login confidenciais, de maneira prática e segura para todas as partes.
 
-Recomendamos fortemente que aplicações que integrem conosco façam uso de bibliotecas existentes para integração OAuth 2.0, já que o protocolo tem diversos detalhes e nuâncias que podem abrir brechas de segurança para sua aplicação e usuários em casos de descuido.
-
-O primeiro passo é cadastrar sua aplicação conosco. Para isso, envie um email para odonline@olddragon.com.br informando:
-
-- O nome da sua aplicação
-- Descrição do que sua aplicação faz ou irá fazer
-- Uma URL de resposta para sua aplicação (exemplo: `https://example.org/callback`)
-
-Você precisa ter uma conta em [olddragon.com.br](https://olddragon.com.br) usando o mesmo endereço de email remetente, assim iremos vincular à sua conta. Em breve, você poderá criar e gerenciar suas aplicações no próprio site, sem precisar entrar em contato conosco por email.
-
-A autenticação de usuários é importante para que os mesmos acessem conteúdos digitais exclusivos de suas contas, como monstros, equipamentos, magias e livros digitais que adquiriram em suas contas. Por exemplo, o monstro [Normósia](https://olddragon.com.br/monstros/normosia) é exclusivo do livro [ARKHI](https://olddragon.com.br/livros/arkhi), e somente usuários que compraram este livro digital tem acesso a este monstro no Old Dragon Online. A autenticação também é primordial para, por exemplo, listar campanhas e personagens, já que estes somente são possíveis de listar se soubermos qual usuário que está tentando listar suas campanhas e personagens.
+[Leia mais sobre Autenticação](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/autenticacao.md#autenticação)
 
 Identifique sua aplicação
 -------------------------
