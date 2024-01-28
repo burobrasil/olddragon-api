@@ -66,8 +66,17 @@ Listar monstros
     "jp": "5",
     "mo": 9,
     "dv": "1",
-    "described_attacks": [
-      "1 × arma + 3 (arma + 0)"
+    "attacks": [
+      {
+        "text": "1 × arma +3 (arma +0)",
+        "times": 1,
+        "description": "arma",
+        "ba": 3,
+        "damage_description": "arma +0",
+        "damage": "nil",
+        "damage_bonus": 0,
+        "weapon": true
+      }
     ],
     "fontes": [
       {
@@ -135,8 +144,17 @@ Obter monstro específico
   "jp": "5",
   "mo": 9,
   "dv": "1",
-  "described_attacks": [
-    "1 × arma + 3 (arma + 0)"
+  "attacks": [
+    {
+      "text": "1 × arma +3 (arma +0)",
+      "times": 1,
+      "description": "arma",
+      "ba": 3,
+      "damage_description": "arma +0",
+      "damage": "nil",
+      "damage_bonus": 0,
+      "weapon": true
+    }
   ],
   "fontes": [
     {
