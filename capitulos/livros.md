@@ -34,6 +34,11 @@ Listar livros
     "id": "srd",
     "title": "SRD: Documento de Referência",
     "url": "https://olddragon.com.br/livros/srd.json"
+  },
+  {
+    "id": "cl1",
+    "title": "CL1: O Forte das Terras Marginais",
+    "url": "https://olddragon.com.br/livros/cl1.json"
   }
 ]
 ```
