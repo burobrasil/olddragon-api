@@ -42,6 +42,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "fontes": [
       {
         "page": 105,
+        "compact": false,
         "livro_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
@@ -69,6 +70,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "fontes": [
       {
         "page": 119,
+        "compact": false,
         "livro_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
@@ -96,6 +98,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "fontes": [
       {
         "page": 119,
+        "compact": false,
         "livro_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
@@ -140,6 +143,7 @@ Obter magia específica
   "fontes": [
     {
       "page": 119,
+      "compact": false,
       "livro_url": "https://olddragon.com.br/livros/lb1.json"
     }
   ],

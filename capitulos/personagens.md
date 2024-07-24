@@ -43,6 +43,7 @@ Obter personagem específico
   "movement_run": 18,
   "movement_climb": 7,
   "movement_swim": 4,
+  "infravision": 0,
   "race": "humano",
   "class": "guerreiro",
   "campanha_url": "https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json",

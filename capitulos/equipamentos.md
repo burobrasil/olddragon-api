@@ -30,6 +30,7 @@ Listar equipamentos
     "fontes": [
       {
         "page": 58,
+        "compact": false,
         "livro_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
@@ -50,6 +51,7 @@ Listar equipamentos
     "fontes": [
       {
         "page": 60,
+        "compact": false,
         "livro_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
@@ -70,6 +72,7 @@ Listar equipamentos
     "fontes": [
       {
         "page": 62,
+        "compact": false,
         "livro_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
@@ -107,6 +110,7 @@ Obter equipamento específico
   "fontes": [
     {
       "page": 58,
+      "compact": false,
       "livro_url": "https://olddragon.com.br/livros/lb1.json"
     }
   ],
