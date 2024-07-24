@@ -98,11 +98,13 @@ Endpoints da API
 ----------------
 <!-- START API ENDPOINTS -->
 - [Campanhas](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/campanhas.md#campanhas)
+- [Classes](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/classes.md#classes)
 - [Equipamentos](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/equipamentos.md#equipamentos)
 - [Livros](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/livros.md#livros)
 - [Magias](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/magias.md#magias)
 - [Monstros](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/monstros.md#monstros)
 - [Personagens](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/personagens.md#personagens)
+- [Raças](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/racas.md#racas)
 <!-- END API ENDPOINTS -->
 
 Suporte
