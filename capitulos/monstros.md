@@ -32,7 +32,7 @@ Listar monstros
       {
         "page": 114,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb3.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb3.json"
       }
     ],
     "url": "https://olddragon.com.br/monstros/abelhas-assassinas.json"
@@ -84,17 +84,17 @@ Listar monstros
       {
         "page": 177,
         "compact": true,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": 141,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb3.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb3.json"
       },
       {
         "page": null,
         "compact": true,
-        "livro_url": "https://olddragon.com.br/livros/srd.json"
+        "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
     "url": "https://olddragon.com.br/monstros/orc.json"
@@ -163,17 +163,17 @@ Obter monstro específico
     {
       "page": 177,
       "compact": true,
-      "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
     },
     {
       "page": 141,
       "compact": false,
-      "livro_url": "https://olddragon.com.br/livros/lb3.json"
+      "digital_item_url": "https://olddragon.com.br/livros/lb3.json"
     },
     {
       "page": null,
       "compact": true,
-      "livro_url": "https://olddragon.com.br/livros/srd.json"
+      "digital_item_url": "https://olddragon.com.br/livros/srd.json"
     }
   ],
   "url": "https://olddragon.com.br/monstros/orc.json"

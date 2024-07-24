@@ -45,12 +45,12 @@ Listar raças
       {
         "page": 22,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
-        "livro_url": "https://olddragon.com.br/livros/srd.json"
+        "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
     "url": "https://olddragon.com.br/racas/anao.json"
@@ -85,12 +85,12 @@ Listar raças
       {
         "page": 20,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
-        "livro_url": "https://olddragon.com.br/livros/srd.json"
+        "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
     "url": "https://olddragon.com.br/racas/elfo.json"
@@ -117,12 +117,12 @@ Listar raças
       {
         "page": 18,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
-        "livro_url": "https://olddragon.com.br/livros/srd.json"
+        "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
     "url": "https://olddragon.com.br/racas/humano.json"
@@ -174,12 +174,12 @@ Obter raca específica
     {
       "page": 22,
       "compact": false,
-      "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
     },
     {
       "page": null,
       "compact": true,
-      "livro_url": "https://olddragon.com.br/livros/srd.json"
+      "digital_item_url": "https://olddragon.com.br/livros/srd.json"
     }
   ],
   "url": "https://olddragon.com.br/racas/anao.json"

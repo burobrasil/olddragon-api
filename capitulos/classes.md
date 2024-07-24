@@ -131,12 +131,12 @@ Listar classes
       {
         "page": 28,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
-        "livro_url": "https://olddragon.com.br/livros/srd.json"
+        "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
     "url": "https://olddragon.com.br/classes/guerreiro.json"
@@ -255,12 +255,12 @@ Listar classes
       {
         "page": 42,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
-        "livro_url": "https://olddragon.com.br/livros/srd.json"
+        "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
     "url": "https://olddragon.com.br/classes/mago.json"
@@ -399,12 +399,12 @@ Listar classes
       {
         "page": 45,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
-        "livro_url": "https://olddragon.com.br/livros/srd.json"
+        "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
     "parent_class_url": "https://olddragon.com.br/classes/mago.json",
@@ -561,12 +561,12 @@ Obter classe específica
     {
       "page": 45,
       "compact": false,
-      "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
     },
     {
       "page": null,
       "compact": true,
-      "livro_url": "https://olddragon.com.br/livros/srd.json"
+      "digital_item_url": "https://olddragon.com.br/livros/srd.json"
     }
   ],
   "parent_class_url": "https://olddragon.com.br/classes/mago.json",

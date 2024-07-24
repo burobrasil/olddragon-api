@@ -44,9 +44,11 @@ Obter personagem específico
   "movement_climb": 7,
   "movement_swim": 4,
   "infravision": 0,
-  "race": "humano",
-  "class": "guerreiro",
-  "campanha_url": "https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json",
+  "character_race_name": "Humano",
+  "character_race_url": "https://olddragon.com.br/racas/humano.json",
+  "character_class_name": "Guerreiro",
+  "character_class_url": "https://olddragon.com.br/classes/guerreiro.json",
+  "campaign_url": "https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json",
   "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json"
 }
 ```

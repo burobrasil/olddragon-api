@@ -32,7 +32,7 @@ Listar equipamentos
       {
         "page": 58,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/equipamentos/adaga.json"
@@ -54,7 +54,7 @@ Listar equipamentos
       {
         "page": 60,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/equipamentos/escudo.json"
@@ -76,7 +76,7 @@ Listar equipamentos
       {
         "page": 62,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/equipamentos/tocha.json"
@@ -115,7 +115,7 @@ Obter equipamento específico
     {
       "page": 58,
       "compact": false,
-      "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
     }
   ],
   "url": "https://olddragon.com.br/equipamentos/adaga.json"

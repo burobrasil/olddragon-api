@@ -44,7 +44,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
       {
         "page": 105,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/magias/ajuda.json"
@@ -73,7 +73,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
       {
         "page": 119,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/magias/escuridao.json"
@@ -102,7 +102,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
       {
         "page": 119,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/magias/luz.json"
@@ -148,7 +148,7 @@ Obter magia específica
     {
       "page": 119,
       "compact": false,
-      "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
     }
   ],
   "url": "https://olddragon.com.br/magias/luz.json"
