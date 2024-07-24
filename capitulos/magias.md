@@ -27,6 +27,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
 [
   {
     "id": "ajuda",
+    "type": "Spell",
     "name": "Ajuda",
     "arcane": null,
     "divine": 2,
@@ -50,6 +51,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
   },
   {
     "id": "escuridao",
+    "type": "Spell",
     "name": "Escuridão",
     "arcane": 1,
     "divine": null,
@@ -78,6 +80,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
   },
   {
     "id": "luz",
+    "type": "Spell",
     "name": "Luz",
     "arcane": 1,
     "divine": 1,
@@ -123,6 +126,7 @@ Obter magia específica
 ```json
 {
   "id": "luz",
+  "type": "Spell",
   "name": "Luz",
   "arcane": 1,
   "divine": 1,

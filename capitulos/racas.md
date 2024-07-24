@@ -17,6 +17,7 @@ Listar raças
 [
   {
     "id": "anao",
+    "type": "CharacterRace",
     "name": "Anão",
     "flavor": "Orgulhosos Habitantes dos Salões sob a Montanha.",
     "movement": 6,
@@ -56,6 +57,7 @@ Listar raças
   },
   {
     "id": "elfo",
+    "type": "CharacterRace",
     "name": "Elfo",
     "flavor": "Misteriosos, Longevos e Graciosos habitantes das Florestas.",
     "movement": 9,
@@ -95,6 +97,7 @@ Listar raças
   },
   {
     "id": "humano",
+    "type": "CharacterRace",
     "name": "Humano",
     "flavor": "Os mais Comuns, Versáteis e Adaptáveis Aventureiros.",
     "movement": 9,
@@ -143,6 +146,7 @@ Obter raca específica
 ```json
 {
   "id": "anao",
+  "type": "CharacterRace",
   "name": "Anão",
   "flavor": "Orgulhosos Habitantes dos Salões sob a Montanha.",
   "movement": 6,

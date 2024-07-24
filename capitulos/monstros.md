@@ -17,6 +17,7 @@ Listar monstros
 [
   {
     "id": "abelhas-assassinas",
+    "type": "Monster",
     "name": "Abelhas assassinas",
     "flavor": "Agressivas e venenosas, fazem colmeia nos subterrâneos e tocas.",
     "concept": "inseto",
@@ -38,6 +39,7 @@ Listar monstros
   },
   {
     "id": "orc",
+    "type": "Monster",
     "name": "Orc",
     "flavor": "Selvagens e brutais, visam a expansão de seus territórios por meio de invasões e constantes ataques aos outros povos.",
     "concept": "humanoide",
@@ -116,6 +118,7 @@ Obter monstro específico
 ```json
 {
   "id": "orc",
+  "type": "Monster",
   "name": "Orc",
   "flavor": "Selvagens e brutais, visam a expansão de seus territórios por meio de invasões e constantes ataques aos outros povos.",
   "concept": "humanoide",

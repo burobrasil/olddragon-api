@@ -17,6 +17,7 @@ Listar equipamentos
 [
   {
     "id": "adaga",
+    "type": "Equipment",
     "name": "Adaga",
     "concept": "weapon",
     "updated_at": "2023-01-01T00:00:00.000",
@@ -38,6 +39,7 @@ Listar equipamentos
   },
   {
     "id": "escudo",
+    "type": "Equipment",
     "name": "Escudo",
     "concept": "shield",
     "updated_at": "2023-01-01T00:00:00.000",
@@ -59,6 +61,7 @@ Listar equipamentos
   },
   {
     "id": "tocha",
+    "type": "Equipment",
     "name": "Tocha",
     "concept": "misc",
     "updated_at": "2023-01-01T00:00:00.000",
@@ -97,6 +100,7 @@ Obter equipamento específico
 ```json
 {
   "id": "adaga",
+  "type": "Equipment",
   "name": "Adaga",
   "concept": "weapon",
   "updated_at": "2023-01-01T00:00:00.000",

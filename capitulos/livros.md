@@ -17,26 +17,31 @@ Listar livros
 [
   {
     "id": "lb1",
+    "type": "DigitalItem",
     "title": "Livro I: Regras Básicas",
     "url": "https://olddragon.com.br/livros/lb1.json"
   },
   {
     "id": "lb2",
+    "type": "DigitalItem",
     "title": "Livro II: Regras Expandidas",
     "url": "https://olddragon.com.br/livros/lb2.json"
   },
   {
     "id": "lb3",
+    "type": "DigitalItem",
     "title": "Livro III: Monstros & Inimigos",
     "url": "https://olddragon.com.br/livros/lb3.json"
   },
   {
     "id": "srd",
+    "type": "DigitalItem",
     "title": "SRD: Documento de Referência",
     "url": "https://olddragon.com.br/livros/srd.json"
   },
   {
     "id": "cl1",
+    "type": "DigitalItem",
     "title": "CL1: O Forte das Terras Marginais",
     "url": "https://olddragon.com.br/livros/cl1.json"
   }
@@ -59,6 +64,7 @@ Obter livro específico
 ```json
 {
   "id": "lb1",
+  "type": "DigitalItem",
   "title": "Livro I: Regras Básicas",
   "url": "https://olddragon.com.br/livros/lb1.json"
 }

@@ -17,6 +17,7 @@ Listar classes
 [
   {
     "id": "guerreiro",
+    "type": "CharacterClass",
     "name": "Guerreiro",
     "flavor": "Aventureiros especializados em combate, estão sempre na linha de frente e são mortais quando desembainham suas armas.",
     "armors_description": "Pode usar todas as armaduras.",
@@ -142,6 +143,7 @@ Listar classes
   },
   {
     "id": "mago",
+    "type": "CharacterClass",
     "name": "Mago",
     "flavor": "Aventureiro estudioso, especializado nas artes arcanas, dedicado a conjurar magias escritas em grimórios e pergaminhos.",
     "armors_description": "Nenhuma. Usar escudos ou armaduras impede a conjuração de magias e protegem apenas metade da CA normal.",
@@ -265,6 +267,7 @@ Listar classes
   },
   {
     "id": "necromante",
+    "type": "CharacterClass",
     "name": "Necromante",
     "flavor": "O Necromante é um estudioso dos fatos obscuros os quais cercam a vida e a morte, estudando as energias místicas que interferem nos efeitos destes conceitos sobre os seres vivos ou não.",
     "armors_description": "Nenhuma. Usar escudos ou armaduras impede a conjuração de magias e protegem apenas metade da CA normal.",
@@ -426,6 +429,7 @@ Obter classe específica
 ```json
 {
   "id": "necromante",
+  "type": "CharacterClass",
   "name": "Necromante",
   "flavor": "O Necromante é um estudioso dos fatos obscuros os quais cercam a vida e a morte, estudando as energias místicas que interferem nos efeitos destes conceitos sobre os seres vivos ou não.",
   "armors_description": "Nenhuma. Usar escudos ou armaduras impede a conjuração de magias e protegem apenas metade da CA normal.",
