@@ -27,6 +27,7 @@ Este endpoint, sem nenhum parâmetro, retorna:
 [
   {
     "id": "ajuda",
+    "type": "Spell",
     "name": "Ajuda",
     "arcane": null,
     "divine": 2,
@@ -42,13 +43,15 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "fontes": [
       {
         "page": 105,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "compact": false,
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/magias/ajuda.json"
   },
   {
     "id": "escuridao",
+    "type": "Spell",
     "name": "Escuridão",
     "arcane": 1,
     "divine": null,
@@ -69,13 +72,15 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "fontes": [
       {
         "page": 119,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "compact": false,
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/magias/escuridao.json"
   },
   {
     "id": "luz",
+    "type": "Spell",
     "name": "Luz",
     "arcane": 1,
     "divine": 1,
@@ -96,7 +101,8 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "fontes": [
       {
         "page": 119,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "compact": false,
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/magias/luz.json"
@@ -120,6 +126,7 @@ Obter magia específica
 ```json
 {
   "id": "luz",
+  "type": "Spell",
   "name": "Luz",
   "arcane": 1,
   "divine": 1,
@@ -140,7 +147,8 @@ Obter magia específica
   "fontes": [
     {
       "page": 119,
-      "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      "compact": false,
+      "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
     }
   ],
   "url": "https://olddragon.com.br/magias/luz.json"

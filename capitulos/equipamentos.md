@@ -17,6 +17,7 @@ Listar equipamentos
 [
   {
     "id": "adaga",
+    "type": "Equipment",
     "name": "Adaga",
     "concept": "weapon",
     "updated_at": "2023-01-01T00:00:00.000",
@@ -30,13 +31,15 @@ Listar equipamentos
     "fontes": [
       {
         "page": 58,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "compact": false,
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/equipamentos/adaga.json"
   },
   {
     "id": "escudo",
+    "type": "Equipment",
     "name": "Escudo",
     "concept": "shield",
     "updated_at": "2023-01-01T00:00:00.000",
@@ -50,13 +53,15 @@ Listar equipamentos
     "fontes": [
       {
         "page": 60,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "compact": false,
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/equipamentos/escudo.json"
   },
   {
     "id": "tocha",
+    "type": "Equipment",
     "name": "Tocha",
     "concept": "misc",
     "updated_at": "2023-01-01T00:00:00.000",
@@ -70,7 +75,8 @@ Listar equipamentos
     "fontes": [
       {
         "page": 62,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "compact": false,
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       }
     ],
     "url": "https://olddragon.com.br/equipamentos/tocha.json"
@@ -94,6 +100,7 @@ Obter equipamento específico
 ```json
 {
   "id": "adaga",
+  "type": "Equipment",
   "name": "Adaga",
   "concept": "weapon",
   "updated_at": "2023-01-01T00:00:00.000",
@@ -107,7 +114,8 @@ Obter equipamento específico
   "fontes": [
     {
       "page": 58,
-      "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      "compact": false,
+      "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
     }
   ],
   "url": "https://olddragon.com.br/equipamentos/adaga.json"

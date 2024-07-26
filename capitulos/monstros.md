@@ -17,6 +17,7 @@ Listar monstros
 [
   {
     "id": "abelhas-assassinas",
+    "type": "Monster",
     "name": "Abelhas assassinas",
     "flavor": "Agressivas e venenosas, fazem colmeia nos subterrâneos e tocas.",
     "concept": "inseto",
@@ -31,13 +32,14 @@ Listar monstros
       {
         "page": 114,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb3.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb3.json"
       }
     ],
     "url": "https://olddragon.com.br/monstros/abelhas-assassinas.json"
   },
   {
     "id": "orc",
+    "type": "Monster",
     "name": "Orc",
     "flavor": "Selvagens e brutais, visam a expansão de seus territórios por meio de invasões e constantes ataques aos outros povos.",
     "concept": "humanoide",
@@ -82,17 +84,17 @@ Listar monstros
       {
         "page": 177,
         "compact": true,
-        "livro_url": "https://olddragon.com.br/livros/lb1.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": 141,
         "compact": false,
-        "livro_url": "https://olddragon.com.br/livros/lb3.json"
+        "digital_item_url": "https://olddragon.com.br/livros/lb3.json"
       },
       {
         "page": null,
         "compact": true,
-        "livro_url": "https://olddragon.com.br/livros/srd.json"
+        "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
     "url": "https://olddragon.com.br/monstros/orc.json"
@@ -116,6 +118,7 @@ Obter monstro específico
 ```json
 {
   "id": "orc",
+  "type": "Monster",
   "name": "Orc",
   "flavor": "Selvagens e brutais, visam a expansão de seus territórios por meio de invasões e constantes ataques aos outros povos.",
   "concept": "humanoide",
@@ -160,17 +163,17 @@ Obter monstro específico
     {
       "page": 177,
       "compact": true,
-      "livro_url": "https://olddragon.com.br/livros/lb1.json"
+      "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
     },
     {
       "page": 141,
       "compact": false,
-      "livro_url": "https://olddragon.com.br/livros/lb3.json"
+      "digital_item_url": "https://olddragon.com.br/livros/lb3.json"
     },
     {
       "page": null,
       "compact": true,
-      "livro_url": "https://olddragon.com.br/livros/srd.json"
+      "digital_item_url": "https://olddragon.com.br/livros/srd.json"
     }
   ],
   "url": "https://olddragon.com.br/monstros/orc.json"
