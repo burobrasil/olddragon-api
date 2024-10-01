@@ -79,6 +79,30 @@ Este endpoint, sem nenhum parâmetro, retorna:
     "url": "https://olddragon.com.br/magias/escuridao.json"
   },
   {
+    "id": "ilusao",
+    "type": "Spell",
+    "name": "Ilusão",
+    "arcane": null,
+    "divine": null,
+    "necromancer": null,
+    "illusionist": 1,
+    "updated_at": "2023-01-01T00:00:00.000",
+    "reverse": false,
+    "access": "complete",
+    "range": "especial",
+    "duration": "especial",
+    "jp": "JPS nega",
+    "description": "Enquanto concentrado, o conjurador cria a ilusão de uma criatura, objeto ou cena, desde que já tenha a visto anteriormente. A Ilusão é apenas visual e, apesar de possuir movimentos, não emite sons, não possui cheiro e não irradia temperatura.\n\nSe não for usada para criar um falso ataque, a ilusão desaparecerá ao ser tocada. Se usada para atacar ou simular um ataque, o alvo poderá realizar uma JPS para negar os efeitos da ilusão.\n\nA Ilusão criada possui CA 11, o mesmo BA do conjurador e desaparece após a concentração do conjurador ser interrompida ou ao ser atingida com sucesso em combate.\n\nUma ilusão nunca causa dano real. Ao ser “morto” por uma ilusão, o oponente ficará inconsciente por 1d4 rodadas.\n",
+    "fontes": [
+      {
+        "page": 117,
+        "compact": false,
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
+      }
+    ],
+    "url": "https://olddragon.com.br/magias/ilusao.json"
+  },
+  {
     "id": "luz",
     "type": "Spell",
     "name": "Luz",
