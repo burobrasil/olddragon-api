@@ -60,6 +60,50 @@ Listar equipamentos
     "url": "https://olddragon.com.br/equipamentos/escudo.json"
   },
   {
+    "id": "espada-curta",
+    "type": "Equipment",
+    "name": "Espada Curta",
+    "concept": "weapon",
+    "updated_at": "2023-01-01T00:00:00.000",
+    "access": "complete",
+    "cost": 600,
+    "damage": "1d6",
+    "bonus_ca": null,
+    "weight_in_load": 1,
+    "weight_in_grams": null,
+    "description": "Pequena, Cortante.",
+    "fontes": [
+      {
+        "page": 58,
+        "compact": false,
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
+      }
+    ],
+    "url": "https://olddragon.com.br/equipamentos/espada-curta.json"
+  },
+  {
+    "id": "lanca",
+    "type": "Equipment",
+    "name": "Lança",
+    "concept": "weapon",
+    "updated_at": "2023-01-01T00:00:00.000",
+    "access": "complete",
+    "cost": 400,
+    "damage": "1d6",
+    "bonus_ca": null,
+    "weight_in_load": 2,
+    "weight_in_grams": null,
+    "description": "Média, Madeira, Perfurante, Arremesso (12), Haste, Versátil, Contrainvestida.",
+    "fontes": [
+      {
+        "page": 58,
+        "compact": false,
+        "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
+      }
+    ],
+    "url": "https://olddragon.com.br/equipamentos/lanca.json"
+  },
+  {
     "id": "tocha",
     "type": "Equipment",
     "name": "Tocha",
