@@ -19,7 +19,6 @@ Obter personagem específico
   "level": 5,
   "created_at": "2023-01-01T00:00:00.000",
   "updated_at": "2023-01-01T00:00:00.000",
-  "picture": "https://olddragon.com.br/vite-test/assets/no-portrait-BiV_WHMJ.webp",
   "health_points": 30,
   "max_hp": 30,
   "injuries": 0,

@@ -25,8 +25,7 @@ Listar classes
     "magic_items_description": "Não pode usar cajados, varinhas e pergaminhos mágicos com exceção dos pergaminhos de proteção.",
     "hp": 10,
     "high_level_hp_bonus": 2,
-    "restrictions": {
-    },
+    "restrictions": {},
     "levels": {
       "1": {
         "ba": 1,
@@ -151,8 +150,7 @@ Listar classes
     "magic_items_description": "Podem usar todos os tipos.",
     "hp": 4,
     "high_level_hp_bonus": 1,
-    "restrictions": {
-    },
+    "restrictions": {},
     "levels": {
       "1": {
         "ba": 0,
@@ -275,8 +273,7 @@ Listar classes
     "magic_items_description": "Podem usar todos os tipos.",
     "hp": 4,
     "high_level_hp_bonus": 1,
-    "restrictions": {
-    },
+    "restrictions": {},
     "levels": {
       "1": {
         "ba": 0,
@@ -315,7 +312,7 @@ Listar classes
       "8": {
         "ba": 3,
         "jp": 7,
-        "xp": 56000
+        "xp": 46000
       },
       "9": {
         "ba": 3,
@@ -437,8 +434,7 @@ Obter classe específica
   "magic_items_description": "Podem usar todos os tipos.",
   "hp": 4,
   "high_level_hp_bonus": 1,
-  "restrictions": {
-  },
+  "restrictions": {},
   "levels": {
     "1": {
       "ba": 0,
@@ -477,7 +473,7 @@ Obter classe específica
     "8": {
       "ba": 3,
       "jp": 7,
-      "xp": 56000
+      "xp": 46000
     },
     "9": {
       "ba": 3,

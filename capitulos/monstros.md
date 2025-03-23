@@ -22,9 +22,7 @@ Listar monstros
     "flavor": "Agressivas e venenosas, fazem colmeia nos subterrâneos e tocas.",
     "concept": "inseto",
     "size": "medio",
-    "habitats": [
-
-    ],
+    "habitats": [],
     "alignment": "neutro",
     "variant": false,
     "access": "limited",
