@@ -11,6 +11,10 @@ Listar equipamentos
 
 - `GET /equipamentos.json` retorna todos os equipamentos.
 
+_Parâmetros opcionais de URL_:
+
+* `ids[]` - Lista de IDs de equipamentos. Exemplo: `ids[]=adaga&ids[]=escudo`.
+
 ###### Exemplo de resposta JSON
 <!-- START equipment_index.json -->
 ```json
