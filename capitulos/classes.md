@@ -11,6 +11,10 @@ Listar classes
 
 * `GET /classes.json` retorna todos as classes.
 
+_Parâmetros opcionais de URL_:
+
+* `ids[]` - Lista de IDs de classes. Exemplo: `ids[]=guerreiro&ids[]=necromante`.
+
 ###### Exemplo de resposta JSON
 <!-- START character_classes_index.json -->
 ```json

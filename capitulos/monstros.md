@@ -11,6 +11,10 @@ Listar monstros
 
 * `GET /monstros.json` retorna todos os monstros.
 
+_Parâmetros opcionais de URL_:
+
+* `ids[]` - Lista de IDs de monstros. Exemplo: `ids[]=abelhas-assassinas&ids[]=orc`.
+
 ###### Exemplo de resposta JSON
 <!-- START monsters_index.json -->
 ```json

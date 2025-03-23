@@ -11,6 +11,10 @@ Listar raças
 
 * `GET /racas.json` retorna todos as raças.
 
+_Parâmetros opcionais de URL_:
+
+* `ids[]` - Lista de IDs de raças. Exemplo: `ids[]=anao&ids[]=elfo`.
+
 ###### Exemplo de resposta JSON
 <!-- START character_races_index.json -->
 ```json

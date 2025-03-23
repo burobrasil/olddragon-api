@@ -11,6 +11,10 @@ Listar livros
 
 - `GET /livros.json` retorna todos os livros.
 
+_Parâmetros opcionais de URL_:
+
+* `ids[]` - Lista de IDs de livros. Exemplo: `ids[]=lb1&ids[]=lb2`.
+
 ###### Exemplo de resposta JSON
 <!-- START digital_items_index.json -->
 ```json
