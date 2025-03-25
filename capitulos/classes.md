@@ -24,6 +24,7 @@ _Parâmetros opcionais de URL_:
     "type": "CharacterClass",
     "name": "Guerreiro",
     "flavor": "Aventureiros especializados em combate, estão sempre na linha de frente e são mortais quando desembainham suas armas.",
+    "access": "complete",
     "armors_description": "Pode usar todas as armaduras.",
     "weapons_description": "Pode usar todas as armas.",
     "magic_items_description": "Não pode usar cajados, varinhas e pergaminhos mágicos com exceção dos pergaminhos de proteção.",
@@ -106,6 +107,8 @@ _Parâmetros opcionais de URL_:
         "xp": 600000
       }
     },
+    "picture": null,
+    "thumb_picture": null,
     "abilities": [
       {
         "level": 1,
@@ -149,6 +152,7 @@ _Parâmetros opcionais de URL_:
     "type": "CharacterClass",
     "name": "Mago",
     "flavor": "Aventureiro estudioso, especializado nas artes arcanas, dedicado a conjurar magias escritas em grimórios e pergaminhos.",
+    "access": "complete",
     "armors_description": "Nenhuma. Usar escudos ou armaduras impede a conjuração de magias e protegem apenas metade da CA normal.",
     "weapons_description": "Apenas pequenas. Armas grandes ou médias geram ataques difíceis para Magos.",
     "magic_items_description": "Podem usar todos os tipos.",
@@ -231,6 +235,8 @@ _Parâmetros opcionais de URL_:
         "xp": 650000
       }
     },
+    "picture": null,
+    "thumb_picture": null,
     "abilities": [
       {
         "level": 1,
@@ -272,6 +278,7 @@ _Parâmetros opcionais de URL_:
     "type": "CharacterClass",
     "name": "Necromante",
     "flavor": "O Necromante é um estudioso dos fatos obscuros os quais cercam a vida e a morte, estudando as energias místicas que interferem nos efeitos destes conceitos sobre os seres vivos ou não.",
+    "access": "complete",
     "armors_description": "Nenhuma. Usar escudos ou armaduras impede a conjuração de magias e protegem apenas metade da CA normal.",
     "weapons_description": "Apenas pequenas. Armas grandes ou médias geram ataques difíceis para Necromantes.",
     "magic_items_description": "Podem usar todos os tipos.",
@@ -354,6 +361,8 @@ _Parâmetros opcionais de URL_:
         "xp": 700000
       }
     },
+    "picture": null,
+    "thumb_picture": null,
     "abilities": [
       {
         "level": 1,
@@ -433,6 +442,7 @@ Obter classe específica
   "type": "CharacterClass",
   "name": "Necromante",
   "flavor": "O Necromante é um estudioso dos fatos obscuros os quais cercam a vida e a morte, estudando as energias místicas que interferem nos efeitos destes conceitos sobre os seres vivos ou não.",
+  "access": "complete",
   "armors_description": "Nenhuma. Usar escudos ou armaduras impede a conjuração de magias e protegem apenas metade da CA normal.",
   "weapons_description": "Apenas pequenas. Armas grandes ou médias geram ataques difíceis para Necromantes.",
   "magic_items_description": "Podem usar todos os tipos.",
@@ -515,6 +525,8 @@ Obter classe específica
       "xp": 700000
     }
   },
+  "picture": null,
+  "thumb_picture": null,
   "abilities": [
     {
       "level": 1,
