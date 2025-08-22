@@ -692,13 +692,13 @@ Atualizar Pontos de Vida de personagem
 
 **Parâmetros**: Requisições devem incluir os seguintes parâmetros:
 
-* `pv`: Pontos de Vida (PV) atuais do personagem, entre 0 e o máximo de PV do personagem (legível em `max_hp` no personagem).
+* `health_points`: Pontos de Vida (PV) atuais do personagem, entre 0 e o máximo de PV do personagem (legível em `max_hp` no personagem).
 
 ###### Exemplo de requisição JSON
 <!-- START characters_put_request.json -->
 ```json
 {
-  "pv": 1
+  "health_points": 1
 }
 ```
 <!-- END characters_put_request.json -->
@@ -707,8 +707,8 @@ Atualizar Pontos de Vida de personagem
 
 ``` shell
 curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
-  -d '{"pv": 1}' \
-  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c\pv.json
+  -d '{"health_points": 1}' \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/pv.json
 ```
 
 Atualizar Experiência de personagem
@@ -718,13 +718,13 @@ Atualizar Experiência de personagem
 
 **Parâmetros**: Requisições devem incluir os seguintes parâmetros:
 
-* `xp`: Experiência (XP) atuais do personagem, no mínimo 0.
+* `experience_points`: Experiência (XP) atuais do personagem, no mínimo 0.
 
 ###### Exemplo de requisição JSON
 <!-- START characters_put_request.json -->
 ```json
 {
-  "xp": 20000
+  "experience_points": 20000
 }
 ```
 <!-- END characters_put_request.json -->
@@ -733,6 +733,6 @@ Atualizar Experiência de personagem
 
 ``` shell
 curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
-  -d '{"xp": 20000}' \
-  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c\xp.json
+  -d '{"experience_points": 20000}' \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/xp.json
 ```
