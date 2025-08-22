@@ -7,8 +7,8 @@ Endpoints:
 - [Obter campanha específica](#obter-campanha-específica)
 - [Listar personagens em uma campanha](#listar-personagens-em-uma-campanha)
 
-Listar classes
---------------
+Listar campanhas
+----------------
 
 * `GET /campanhas.json` retorna todas as campanhas do usuário autenticado.
 

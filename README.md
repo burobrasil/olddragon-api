@@ -1,118 +1,169 @@
-Old Dragon Online API
+API Old Dragon Online
 =====================
 
-Bem vindo à API do Old Dragon Online! Se você quer integrar sua aplicação com o OldDragon.com.br ou criar uma nova aplicação utilizando dados do ODO, você está no lugar certo. Obrigado por fazer parte da incrível comunidade Old Dragon!
+Bem-vindo à API do Old Dragon Online! Integre sua aplicação com olddragon.com.br para acessar conteúdo de RPG, personagens, campanhas e muito mais.
 
-Esta API ainda está em constante desenvolvimento. Se você achar qualquer problema ou tiver dificuldade com algo que deva ser um erro, abra uma "Issue" neste repositório, ou envie um email para odonline@olddragon.com.br.
+**Base URL**: `https://olddragon.com.br`
+**Formato**: JSON apenas
+**Autenticação**: OAuth 2.0 com PKCE
 
-Chamadas para API
------------------
+## Início Rápido
 
-Todas as URLs começam com **`https://olddragon.com.br/`**. URLs devem usar HTTPS, HTTP não é suportado.
+```bash
+# Listar monstros públicos (sem autenticação)
+curl -H "User-Agent: MeuApp (email@exemplo.com)" \
+     https://olddragon.com.br/monstros.json
 
-Para fazer uma chamada para carregar todos os monstros disponíveis para usuários não loggados, basta fazer uma chamada para `https://olddragon.com.br/monstros.json`. Usando cURL, é assim:
-
-``` shell
-curl -A 'MinhaAplicacao (seunome@example.com)' https://olddragon.com.br/monstros.json
+# Com autenticação OAuth
+curl -H "Authorization: Bearer SEU_TOKEN" \
+     -H "User-Agent: MeuApp (email@exemplo.com)" \
+     https://olddragon.com.br/personagens.json
 ```
 
-Autenticação
-------------
+## Suporte
 
-Para autenticar você deve usar o protocolo de autenticação [OAuth 2.0](https://oauth.net/2/). OAuth 2.0 permite que os usuários autorizem seu aplicativo a usar o Old Dragon Online em seu nome sem precisar copiar/colar tokens de API ou tocar em informações de login confidenciais, de maneira prática e segura para todas as partes.
+Para dúvidas ou problemas, envie um email para odonline@olddragon.com.br.
 
-[Leia mais sobre Autenticação](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/autenticacao.md#autenticação)
+## Requisitos Básicos
 
-Identifique sua aplicação
--------------------------
+### URLs e Protocolo
+- Todas as URLs começam com `https://olddragon.com.br/`
+- HTTPS obrigatório (HTTP não é suportado)
+- Todas as URLs terminam com `.json`
 
-Você deve incluir o cabeçalho HTTP `User-Agent` com ambos os dados:
+### Cabeçalhos Obrigatórios
+- `User-Agent`: Nome da aplicação e contato (ex: `MeuApp (email@exemplo.com)`)
+- `Content-Type`: `application/json` (para POST/PUT)
+- `Accept`: `application/json` (fortemente recomendado)
 
-* O nome da sua aplicação
-* Um endereço de email para contactar o desenvolvedor, ou o endereço de sua aplicação.
+## Autenticação
 
-Nós usamos estas informações para poder entrar em contato com você caso haja algum problema, ou para reconhecer o seu trabalho. Exemplo: `User-Agent: O Maravilhoso Gerador de Personagens (magodesenvolvedor@example.com)` ou `User-Agent: Gerador de Encontros Aleatórios (https://example.org/gerador)`.
+A API usa OAuth 2.0 com PKCE para autenticação segura. Endpoints públicos (monstros, magias, etc.) podem ser acessados sem autenticação, mas com limitações.
 
-Se você não incluir um cabeçalho `User-Agent`, você poderá receber o erro `400 Bad Request`.
+### Configuração OAuth
+- **Discovery URL**: `https://olddragon.com.br/.well-known/openid-configuration`
+- **Authorization**: `https://olddragon.com.br/authorize`
+- **Token**: `https://olddragon.com.br/token`
+- **Scopes**: `openid email content.read offline_access`
+- **PKCE**: Obrigatório (método S256)
 
-Apenas JSON
------------
+### Tokens
+- **Access Token**: Válido por 1 hora
+- **Refresh Token**: Válido por 1 ano (requer `offline_access`)
+- **Authorization Code**: Válido por 5 minutos
 
-Nós apenas aceitamos e usamos JSON em todas as chamadas da API. Você deve incluir o cabeçalho HTTP `Content-Type` como `Content-Type: application/json; charset=utf-8` em chamadas POST ou PUT. Todas as URLs da API tem final `.json` para indicar que retornam JSON. Você também pode optar por enviar o cabeçalho `Accept: application/json`.
+[Documentação completa de autenticação](capitulos/autenticacao.md)
 
-Paginação
----------
+## Paginação
 
-Todas as coleções (listas com múltiplos itens) de resultado tem seu resultado paginado. O número de resultados pode variar conforme o tamanho da coleção. A nossa API segue a especificação [RFC5988](https://tools.ietf.org/html/rfc5988) de usar o cabeçalho HTTP `Link` para fornecer URLs para páginas relacionadas. Siga essa convenção para acessar outras páginas.
+Todas as coleções são paginadas automaticamente. A API retorna cabeçalhos HTTP para navegação.
 
-Aqui está um exemplo de cabeçalho de resposta da solicitação:
-
-```
-Link: <https://olddragon.com.br/monstros.json?page=1>; rel="first", <https://olddragon.com.br/monstros.json?page=2>; rel="next", <https://olddragon.com.br/monstros.json?page=21>; rel="last"
-```
-
-No resultado, dentro de `Link`, é possível identificar a primeira página (`first`), a próxima página (`next`), e a última página da coleção (`last`).
-
-Além de `Link`, também retornamos os cabeçalhos `Current-Page` com o número da página atual, `Total-Pages` com o número total de páginas, e `Total-Count` com o número total de resultados na coleção, dado os filtros aplicados de busca.
-
-Exemplo de cabeçalhos:
-
-```
+### Cabeçalhos de Resposta
+```http
+Link: <https://olddragon.com.br/monstros.json?page=1>; rel="first",
+      <https://olddragon.com.br/monstros.json?page=2>; rel="next",
+      <https://olddragon.com.br/monstros.json?page=21>; rel="last"
 Current-Page: 1
-Total-Count: 400
 Total-Pages: 20
+Total-Count: 400
 ```
 
-Cache HTTP
-----------
+### Parâmetros
+- `page`: Número da página (padrão: 1)
+- `per_page`: Itens por página (padrão: 20, máximo: 100)
 
-Você deve usar os cabeçalhos de atualidade HTTP para acelerar a sua aplicação e aliviar a carga nos nossos servidores. A maioria das respostas da API incluirá um cabeçalho `ETag` ou `Last-Modified`. Quando você requisitar um recurso pela primeira vez, armazene esses valores. Em solicitações subsequentes, submeta-os de volta para nós como `If-None-Match` e `If-Modified-Since`, respectivamente. Se o recurso não tiver sido alterado desde a sua última solicitação, você receberá uma resposta `304 Not Modified` sem corpo, poupando-lhe tempo e largura de banda ao enviar algo que você já possui.
+## Cache HTTP
 
-Tratando Erros
---------------
+Use cabeçalhos HTTP para otimizar requisições:
 
-Clientes da API devem esperar e tratar de maneira elegante erros temporários do servidor e limites de uso. Recomendamos incorporar tentativas elegantes de 5xx e 429 desde o início na sua integração, para que os erros sejam tratados automaticamente.
+1. Armazene `ETag` ou `Last-Modified` da primeira resposta
+2. Envie como `If-None-Match` ou `If-Modified-Since` em requisições posteriores
+3. Receba `304 Not Modified` se o conteúdo não mudou
 
-### Limitação de uso (429 Too Many Requests)
+## Tratamento de Erros
 
-Retornamos uma resposta [429 Too Many Requests](http://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4) quando você excedeu um limite de uso. Consulte o cabeçalho de resposta `Retry-After` para determinar quanto tempo esperar (em segundos) antes de tentar a solicitação novamente.
+### Códigos de Status
 
-Planeje com antecedência para tratar com elegância os modos de falha que a contrapressão da API exercerá sobre sua integração. Vários limites de taxa estão em vigor, por exemplo, para solicitações GET vs POST e limites por segundo/hora/dia, e eles são ajustados dinamicamente, então respondê-los dinamicamente é essencial, particularmente em níveis de tráfego elevados.
+| Código | Significado | Ação Recomendada |
+|--------|-------------|------------------|
+| 200 | Sucesso | Processar resposta |
+| 304 | Não modificado | Usar cache local |
+| 400 | Requisição inválida | Verificar parâmetros |
+| 401 | Não autorizado | Renovar token |
+| 403 | Proibido | Verificar permissões |
+| 404 | Não encontrado | Não tentar novamente |
+| 429 | Muitas requisições | Aguardar tempo em `Retry-After` |
+| 5xx | Erro do servidor | Tentar novamente com backoff exponencial |
 
-Para ter uma noção de escala, o primeiro limite de taxa que você comumente encontrará é atualmente de 50 solicitações por período de 10 segundos por endereço IP.
+### Limite de Taxa
+- **Padrão**: 50 requisições por 10 segundos por IP
+- **Cabeçalho**: `Retry-After` indica tempo de espera em segundos
 
-### Erros no Servidor ([5xx server errors](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_errors))
+### CORS (Cross-Origin Resource Sharing)
 
-Se o Old Dragon Online estiver com problemas, você receberá uma resposta com um código de status 5xx indicando um erro no servidor. 500 (Internal Server Error), 502 (Bad Gateway), 503 (Service Unavailable), e 504 (Gateway Timeout) podem ser tentados novamente com [redução exponencial](https://en.wikipedia.org/wiki/Exponential_backoff).
+A API suporta CORS para permitir chamadas de navegadores web:
 
-### Página não encontrada (404 Not Found)
+#### Métodos Suportados
+- `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`
 
-Solicitações de API podem receber 404 devido a conteúdo excluído, uma conta inativa, permissões de usuário ausentes, etc. Detecte estas condições para dar aos seus usuários uma explicação clara sobre por que eles não podem se conectar ao Basecamp. Não tente novamente automaticamente essas solicitações.
+#### Headers Permitidos
+- `Authorization`, `Content-Type`, `User-Agent`, e outros
 
-Conteúdo em texto rico (rich text)
-----------------------------------
+## Endpoints da API
 
-Muitos recursos, incluindo mensagens, documentos e comentários, representam seu conteúdo como texto rico (rich text) em HTML e Markdown. O conteúdo em texto rico pode conter listas, citações em bloco, formatação simples e anexos inline, como menções, imagens e arquivos.
+### Conteúdo Público (sem autenticação necessária)
+- [Campanhas](capitulos/campanhas.md) - `/campanhas.json`
+- [Classes](capitulos/classes.md) - `/classes.json`
+- [Equipamentos](capitulos/equipamentos.md) - `/equipamentos.json`
+- [Livros](capitulos/livros.md) - `/livros.json`
+- [Magias](capitulos/magias.md) - `/magias.json`
+- [Monstros](capitulos/monstros.md) - `/monstros.json`
+- [Raças](capitulos/racas.md) - `/racas.json`
 
-Endpoints da API
-----------------
-<!-- START API ENDPOINTS -->
-- [Campanhas](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/campanhas.md#campanhas)
-- [Classes](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/classes.md#classes)
-- [Equipamentos](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/equipamentos.md#equipamentos)
-- [Livros](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/livros.md#livros)
-- [Magias](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/magias.md#magias)
-- [Monstros](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/monstros.md#monstros)
-- [Personagens](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/personagens.md#personagens)
-- [Raças](https://github.com/burobrasil/olddragon-api/blob/master/capitulos/racas.md#racas)
-<!-- END API ENDPOINTS -->
+### Conteúdo Privado (autenticação obrigatória)
+- [Personagens](capitulos/personagens.md) - `/personagens.json`
+- [Acesso](capitulos/acesso.md) - Controle de acesso a conteúdo exclusivo
 
-Suporte
-------------
+### Níveis de Acesso ao Conteúdo
+- **`limited`**: Apenas informações básicas
+- **`partial`**: Informações parciais (usuário possui algumas fontes)
+- **`complete`**: Acesso completo (usuário possui todas as fontes)
 
-Se você tem alguma dúvida sobre a API, envie um email para odonline@olddragon.com.br.
+## Parâmetros Comuns
 
-Licença
--------
+### Filtros de Listagem
+- `ids[]`: Array de IDs específicos
+- `name`: Busca por nome (quando disponível)
+- `page`: Número da página
+- `per_page`: Itens por página
 
-Toda a documentação de API neste repositório de código é licenciado sob a [Creative Commons (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/). Compartilhe, remixe, e distribua como desejar.
+### Exemplo com Múltiplos Filtros
+```bash
+curl "https://olddragon.com.br/monstros.json?ids[]=orc&ids[]=goblin&page=2"
+```
+
+## Exemplos Práticos
+
+### Listar Monstros com Filtros
+```bash
+curl -H "User-Agent: MeuApp (email@exemplo.com)" \
+     "https://olddragon.com.br/monstros.json?concepts[]=humanoide&sizes[]=medio"
+```
+
+### Atualizar PV de Personagem
+```bash
+curl -X PUT \
+     -H "Authorization: Bearer SEU_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"health_points": 15}' \
+     https://olddragon.com.br/personagens/ID_PERSONAGEM/pv.json
+```
+
+## Suporte
+
+**Email**: odonline@olddragon.com.br
+**Site**: https://olddragon.com.br
+
+## Licença
+
+Documentação licenciada sob [Creative Commons (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/).

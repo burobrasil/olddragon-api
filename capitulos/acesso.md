@@ -1,8 +1,84 @@
-Acesso
-======
+Controle de Acesso
+==================
 
-Algumas respostas contém um atributo `access`, que denota o nível de acesso que o usuário tem acesso sobre o conteúdo:
+A API implementa um sistema de controle de acesso baseado nas licenças dos usuários.
 
-* `complete`: acesso completo a todo o conteúdo.
-* `partial`: acesso parcial ao conteúdo. É necessário adquirir um livro que tenha a integralidade do conteúdo para desbloquear mais informações. Exemplo: o monstro Orc está presente no livro SRD apenas com estatísticas básicas. No livro LB3 (Monstros & Inimigos), está completo com todo seu contexto e descrição. Caso o usuário logado não tenha o SRD, o monstro Orc será informado apenas como acesso parcial.
-* `limited`: acesso limitado do conteúdo. Geralmente apenas o nome e poucas informações são disponíveis. Exemplo: o monstro Normósia está disponível apenas no livro "ARKHI", portanto apenas usuários com a posse desse livro tem acesso a este monstro. Para outros usuários, apenas é retornado um acesso limitado. O usuário deve adquirir este conteúdo.
+## Níveis de Acesso
+
+O campo `access` em respostas da API indica o nível de acesso:
+
+### `limited` - Acesso Limitado
+- Apenas nome e referências
+- Sem estatísticas ou descrições
+- **Quando**: Usuário não possui nenhuma fonte que confira acesso ao conteúdo.
+
+### `partial` - Acesso Parcial
+- Informações parciais
+- Estatísticas básicas
+- Descrição resumida
+- **Quando**: Usuário possui ao menos uma fonte com informações parciais quanto ao conteúdo.
+
+### `complete` - Acesso Completo
+- Todas as informações disponíveis
+- Estatísticas completas
+- Descrições detalhadas
+- Imagens e conteúdo adicional
+- **Quando**: Usuário possui ao menos uma fonte completa do conteúdo.
+
+## Exemplos de Resposta
+
+### Com Acesso Completo
+```json
+{
+  "id": "orc",
+  "name": "Orc",
+  "access": "complete",
+  "pv": "6",
+  "ca": "11/14",
+  "attacks": [...],
+  "description": "Selvagens e brutais...",
+  "fontes": [
+    {"page": 177, "digital_item_url": "https://olddragon.com.br/livros/lb1.json"}
+  ]
+}
+```
+
+### Com Acesso Limitado
+```json
+{
+  "id": "normosia",
+  "name": "Normósia",
+  "access": "limited",
+  "fontes": [
+    {"digital_item_url": "https://olddragon.com.br/livros/arkhi.json"}
+  ]
+}
+```
+
+## Campo `fontes`
+
+Toda resposta inclui `fontes` indicando:
+- `digital_item_url`: URL do livro digital
+- `page`: Página de referência
+- `compact`: Se é versão resumida
+
+Use essas informações para:
+1. Mostrar quais livros contêm o conteúdo
+2. Criar links para aquisição
+3. Indicar referências exatas
+
+## Verificar Licenças
+
+### Listar Livros do Usuário
+```bash
+curl -H "Authorization: Bearer TOKEN" \
+     https://olddragon.com.br/meus-livros.json
+```
+
+### Status da Assinatura
+```bash
+curl -H "Authorization: Bearer TOKEN" \
+     https://olddragon.com.br/assinatura.json
+```
+
+Assinantes têm acesso completo aos livros básicos (LB1, LB2, LB3) e conteúdo exclusivo.

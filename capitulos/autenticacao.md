@@ -1,248 +1,101 @@
 Autenticação
 ============
 
-Nós usamos o autenticação [OAuth 2.0](https://oauth.net/2/) em conjunto com [OpenID Connect](https://openid.net/developers/how-connect-works/).
+A API usa OAuth 2.0 com OpenID Connect para autenticação segura. PKCE é obrigatório para todas as aplicações.
 
-Recomendamos fortemente que aplicações que integrem conosco façam uso de bibliotecas existentes para integração OAuth 2.0 e OpenID Connect, já que o protocolo tem diversos detalhes e nuâncias que podem abrir brechas de segurança para sua aplicação e usuários em casos de descuido.
+## Registro de Aplicação
 
-Registre sua aplicação
-----------------------
+Para registrar sua aplicação, envie email para odonline@olddragon.com.br com:
 
-O primeiro passo é cadastrar sua aplicação conosco. Para isso, envie um email para odonline@olddragon.com.br informando:
+1. Nome da aplicação
+2. Descrição da funcionalidade
+3. URL de callback (ex: `https://seu-app.com/callback`)
+4. Tipo de aplicação (web, mobile, desktop)
 
-- O nome da sua aplicação
-- Descrição do que sua aplicação faz ou irá fazer
-- Uma URL de resposta para sua aplicação (exemplo: `https://example.org/callback`)
+Você receberá:
+- `client_id`: Identificador público da aplicação
+- `client_secret`: Chave secreta (apenas para aplicações server-side)
 
-Acesso de Usuários
-------------------
+Não se preocupe, você pode mudar depois qualquer informação (até o nome) da sua aplicação.
 
-Você precisa ter uma conta em [olddragon.com.br](https://olddragon.com.br) usando o mesmo endereço de email remetente, assim iremos vincular à sua conta. Em breve, você poderá criar e gerenciar suas aplicações no próprio site, sem precisar entrar em contato conosco por email.
+## Por que Autenticar?
 
-A autenticação de usuários é importante para que os mesmos acessem conteúdos digitais exclusivos de suas contas, como monstros, equipamentos, magias e livros digitais que adquiriram em suas contas. Por exemplo, o monstro [Normósia](https://olddragon.com.br/monstros/normosia) é exclusivo do livro [ARKHI](https://olddragon.com.br/livros/arkhi), e somente usuários que compraram este livro digital tem acesso a este monstro no Old Dragon Online. A autenticação também é primordial para, por exemplo, listar campanhas e personagens, já que estes somente são possíveis de listar se soubermos qual usuário que está tentando listar suas campanhas e personagens.
+A autenticação permite acesso a:
+- **Conteúdo exclusivo**: Monstros, magias e equipamentos de livros comprados
+- **Dados pessoais**: Personagens e campanhas do usuário
+- **Funcionalidades avançadas**: Edição de personagens, gerenciamento de campanhas
 
-Configurações OAuth e OpenID Connect
-------------------------------------
+Exemplo: O monstro "Normósia" só está disponível para quem possui o livro "ARKHI".
 
-A URL [https://olddragon.com.br/.well-known/openid-configuration](https://olddragon.com.br/.well-known/openid-configuration) pode ser usada para auto-configurar seu cliente OpenID Connect.
+## Configuração OAuth 2.0
 
-É necessário utilizar a extensão [PKCE](https://oauth.net/2/pkce/).
+### Endpoints
+- **Discovery**: `https://olddragon.com.br/.well-known/openid-configuration`
+- **Authorization**: `https://olddragon.com.br/authorize`
+- **Token**: `https://olddragon.com.br/token`
+- **User Info**: `https://olddragon.com.br/userinfo`
 
-Recomendamos solicitar os escopos (`scopes`) `openid email content.read offline_access`, que irão possibilitar descobrir o email do usuário, acessar o conteúdo (como personagens), e ter um `refresh_token` para atualizar o acesso.
+### Parâmetros Obrigatórios
 
-O `code` é válido por 5 minutos. O `access_token` é válido por 1 hora. O `refresh_token` é válido por 1 ano. Se você receber um erro 401, é porque seu `access_token` expirou e deverá utilizar um _refresh flow grant_ para conseguir um novo.
-
-Para ter acesso ao `refresh_token`, solicite `prompt=consent` na fase de requisição de autenticação (_auth request_), em conjunto com um escopo (`scope`) `offline_access` (conforme já mencionado acima).
-
-Códigos de exemplo
-------------------
-
-### PHP
-
-`index.php`:
-
-```php
-<?php
-require 'vendor/autoload.php';
-
-session_start();
-
-// Geração de PKCE manual
-function generateCodeVerifier($length = 64) {
-    $randomBytes = random_bytes($length);
-    return rtrim(strtr(base64_encode($randomBytes), '+/', '-_'), '=');
-}
-$codeVerifier = generateCodeVerifier();
-
-function base64_urlencode($input) {
-    return rtrim(strtr(base64_encode($input), '+/', '-_'), '=');
-}
-
-function generateCodeChallenge($codeVerifier) {
-    return base64_urlencode(hash('sha256', $codeVerifier, true));
-}
-$codeChallenge = generateCodeChallenge($codeVerifier);
-
-$_SESSION['codeVerifier'] = $codeVerifier; // Armazenar para mais tarde
-
-$provider = new League\OAuth2\Client\Provider\GenericProvider([
-    'clientId'                => getenv('CLIENT_ID'),
-    'clientSecret'            => getenv('CLIENT_SECRET'),
-    'redirectUri'             => getenv('CALLBACK_URL'), // ex: "https://example.org/callback.php"
-    'urlAuthorize'            => 'https://olddragon.com.br/authorize',
-    'urlAccessToken'          => 'https://olddragon.com.br/token',
-    'urlResourceOwnerDetails' => 'https://olddragon.com.br/'
-]);
-
-$authUrl = $provider->getAuthorizationUrl([
-    'scope'  => 'openid email content.read offline_access',
-    'prompt' => 'consent', // for getting a refresh token
-    'code_challenge' => $codeChallenge,
-    'code_challenge_method' => 'S256'
-]);
-
-echo "<html><head><title>OldDragon OAuth2 PHP</title><link rel='stylesheet' href='https://unpkg.com/simpledotcss@2.1.0/simple.min.css'></head><body>";
-echo "<h2>Integração com Old Dragon</h2>";
-echo "<center><a href='$authUrl'>Login com OldDragon</a>";
+#### Authorization Request
+```
+https://olddragon.com.br/authorize?
+  client_id=SEU_CLIENT_ID&
+  redirect_uri=https://seu-app.com/callback&
+  response_type=code&
+  scope=openid email content.read offline_access&
+  code_challenge=CODIGO_CHALLENGE&
+  code_challenge_method=S256&
+  prompt=consent
 ```
 
-`callback.php`:
+### Scopes Disponíveis
+- `openid`: Informações básicas do usuário
+- `email`: Email do usuário
+- `content.read`: Acesso ao conteúdo (personagens, campanhas, etc.)
+- `offline_access`: Refresh token para acesso prolongado
 
-```php
-<?php
-require 'vendor/autoload.php';
+### Validade dos Tokens
+- **Authorization Code**: 5 minutos
+- **Access Token**: 1 hora
+- **Refresh Token**: 1 ano (com `offline_access`)
 
-session_start();
+### Renovação de Token
 
-$provider = new League\OAuth2\Client\Provider\GenericProvider([
-    'clientId'                => getenv('CLIENT_ID'),
-    'clientSecret'            => getenv('CLIENT_SECRET'),
-    'redirectUri'             => getenv('CALLBACK_URL'), // ex: "https://example.org/callback.php"
-    'urlAuthorize'            => 'https://olddragon.com.br/authorize',
-    'urlAccessToken'          => 'https://olddragon.com.br/token',
-    'urlResourceOwnerDetails' => 'https://olddragon.com.br/'
-]);
+Quando receber erro 401, use o refresh token:
 
-if (!isset($_GET['code'])) {
-    exit('Invalid request');
-}
-
-$accessToken = $provider->getAccessToken('authorization_code', [
-    'code' => $_GET['code'],
-    'code_verifier' => $_SESSION['codeVerifier'] // Use the stored code verifier
-]);
-
-$_SESSION['accessToken'] = $accessToken->getToken();
-$_SESSION['codeVerifier'] = null;
-
-if (isset($accessToken->getValues()['id_token'])) {
-    $_SESSION['idToken'] = $accessToken->getValues()['id_token'];
-}
-
-if ($accessToken->getRefreshToken()) {
-    $_SESSION['refreshToken'] = $accessToken->getRefreshToken();
-}
-
-// Use Guzzle to make an authenticated API request
-$client = new GuzzleHttp\Client();
-$response = $client->request('GET', 'https://olddragon.com.br/campanhas.json', [
-    'headers' => [
-        'Authorization' => 'Bearer ' . $_SESSION['accessToken']
-    ]
-]);
-$body = $response->getBody();
-
-echo "<html><head><title>OldDragon OAuth2 PHP</title><link rel='stylesheet' href='https://unpkg.com/simpledotcss@2.1.0/simple.min.css'></head><body>";
-echo "<h2>Access Token</h2><pre>" . $_SESSION['accessToken'] . "</pre>";
-echo "<h2>ID Token</h2><pre>" . $_SESSION['idToken'] . "</pre>";
-echo "<h2>Refresh Token</h2><pre>" . $_SESSION['refreshToken'] . "</pre>";
-echo "<h2>/campanhas.json</h2><pre>" . $body . "</pre>";
+```bash
+curl -X POST https://olddragon.com.br/token \
+  -d "grant_type=refresh_token" \
+  -d "refresh_token=SEU_REFRESH_TOKEN" \
+  -d "client_id=SEU_CLIENT_ID"
 ```
 
-### JavaScript (Node.js + Express.js)
+## Importante: Use Bibliotecas OAuth Estabelecidas
 
-`server.js`:
+**Implementar OAuth 2.0 com PKCE manualmente é perigoso e não recomendado.** Use sempre bibliotecas OAuth estabelecidas:
 
-```javascript
-const express = require("express");
-const passport = require("passport");
-const OAuth2Strategy = require("passport-oauth2");
-const session = require("express-session");
-const axios = require("axios");
+### Por que usar bibliotecas?
 
-passport.use(
-  "oauth2",
-  new OAuth2Strategy(
-    {
-      authorizationURL: "https://olddragon.com.br/authorize",
-      tokenURL: "https://olddragon.com.br/token",
-      clientID: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: `https://${process.env.PROJECT_DOMAIN}.glitch.me/callback`,
-      scope: "openid email content.read offline_access",
-      prompt: "consent",
-      scopeSeparator: " ",
-    },
-    (accessToken, refreshToken, profile, cb) => {
-      profile.accessToken = accessToken;
-      profile.refreshToken = refreshToken;
-      return cb(null, profile);
-    }
-  )
-);
+- **Segurança**: Previne vulnerabilidades comuns (CSRF, vazamento de tokens, replay attacks)
+- **PKCE correto**: Geração segura de `code_verifier` e `code_challenge`
+- **Validação de estado**: Proteção contra ataques de cross-site request forgery
+- **Gerenciamento de tokens**: Renovação automática e armazenamento seguro
+- **Conformidade**: Implementação completa das especificações RFC
 
-passport.serializeUser((user, done) => done(null, user));
-passport.deserializeUser((obj, done) => done(null, obj));
+### Bibliotecas Recomendadas
 
-const app = express();
+| Linguagem | Biblioteca |
+|-----------|------------|
+| JavaScript | `passport-oauth2` |
+| Python | `authlib` |
+| Ruby | `omniauth-oauth2` |
 
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+### Riscos da Implementação Manual
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.get("/", (req, res) => {
-  res.send(
-    `<html><head><title>OldDragon OAuth2 Node.js</title><link rel='stylesheet' href='https://unpkg.com/simpledotcss@2.1.0/simple.min.css'></head><body>` +
-      `<h2>Integração com Old Dragon</h2>` +
-      `<a href="/login">Login com OldDragon</a>`
-  );
-});
-
-app.get("/login", passport.authenticate("oauth2"));
-
-app.get("/callback", (req, res, next) => {
-  passport.authenticate("oauth2", (err, user, info) => {
-    if (err) {
-      console.error("Authentication Error:", err);
-      return res.send("Authentication Error: " + err.message);
-    }
-    if (!user) {
-      console.error("Authentication Failed:", info);
-      return res.redirect("/");
-    }
-    req.logIn(user, async (err) => {
-      if (err) {
-        console.error("Login Error:", err);
-        return next(err);
-      }
-
-      // Agora vamos usar os tokens
-      try {
-        const response = await axios.get(
-          "https://olddragon.com.br/campanhas.json",
-          {
-            headers: {
-              Authorization: `Bearer ${req.user.accessToken}`,
-            },
-          }
-        );
-        res.send(
-          `<html><head><title>OldDragon OAuth2 Node.js</title><link rel='stylesheet' href='https://unpkg.com/simpledotcss@2.1.0/simple.min.css'></head><body>` +
-            `<h2>Access Token</h2><pre>${req.user.accessToken}</pre>"` +
-            `<h2>/campanhas.json</h2><pre>${JSON.stringify(
-              response.data
-            )}</pre>`
-        );
-      } catch (error) {
-        console.error("Error fetching campanhas:", error);
-        if (error.response && error.response.status === 401) {
-          // Handle token expiration, e.g., try to refresh the token
-          // If refresh token is also expired, redirect to login
-        }
-        res.status(500).send("Error fetching campanhas");
-      }
-    });
-  })(req, res, next);
-});
-
-app.listen(3000, () => {
-  console.log("Server is running...");
-});
-```
+**Nunca implemente OAuth manualmente** - pode resultar em:
+- Vazamento de tokens de acesso
+- Ataques de replay
+- Vulnerabilidades CSRF
+- Geração insegura de PKCE
+- Validação inadequada de estado
