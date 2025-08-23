@@ -139,6 +139,12 @@ _Parâmetros opcionais de URL_:
 curl -s https://olddragon.com.br/magias.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/magias.json
+```
+
 Obter magia específica
 ----------------------
 
@@ -183,6 +189,12 @@ Obter magia específica
 
 ``` shell
 curl -s https://olddragon.com.br/magias/luz.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/magias/luz.json
 ```
 
 ### Observações sobre atributos

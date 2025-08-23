@@ -110,6 +110,12 @@ _Parâmetros opcionais de URL_:
 curl -s https://olddragon.com.br/monstros.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/monstros.json
+```
+
 Obter monstro específico
 ------------------------
 
@@ -187,4 +193,10 @@ Obter monstro específico
 
 ``` shell
 curl -s https://olddragon.com.br/monstros/orc.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/monstros/orc.json
 ```

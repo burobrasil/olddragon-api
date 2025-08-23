@@ -152,6 +152,12 @@ _Parâmetros opcionais de URL_:
 curl -s https://olddragon.com.br/racas.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/racas.json
+```
+
 Obter raca específica
 ------------------------
 
@@ -211,4 +217,10 @@ Obter raca específica
 
 ``` shell
 curl -s https://olddragon.com.br/racas/anao.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/racas/anao.json
 ```

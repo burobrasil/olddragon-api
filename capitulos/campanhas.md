@@ -59,6 +59,12 @@ _Parâmetros opcionais de URL_:
 curl -s https://olddragon.com.br/campanhas.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/campanhas.json
+```
+
 Obter campanha específica
 ------------------------
 
@@ -104,6 +110,12 @@ Obter campanha específica
 
 ``` shell
 curl -s https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json
 ```
 
 Listar personagens em uma campanha
@@ -443,4 +455,10 @@ Listar personagens em uma campanha
 
 ``` shell
 curl -s https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4/personagens.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4/personagens.json
 ```

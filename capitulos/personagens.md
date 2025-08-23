@@ -348,6 +348,12 @@ _Parâmetros opcionais de URL_:
 curl -s https://olddragon.com.br/personagens.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/personagens.json
+```
+
 Obter personagem específico
 ---------------------------
 
@@ -685,6 +691,12 @@ Obter personagem específico
 curl -s https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
+```
+
 Atualizar Pontos de Vida de personagem
 --------------------------------------
 
@@ -711,6 +723,14 @@ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
   https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/pv.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http PUT https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/pv.json \
+  Authorization:"Bearer $ACCESS_TOKEN" \
+  health_points:=1
+```
+
 Atualizar Experiência de personagem
 --------------------------------------
 
@@ -735,4 +755,12 @@ Atualizar Experiência de personagem
 curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
   -d '{"experience_points": 20000}' \
   https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/xp.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http PUT https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/xp.json \
+  Authorization:"Bearer $ACCESS_TOKEN" \
+  experience_points:=20000
 ```
