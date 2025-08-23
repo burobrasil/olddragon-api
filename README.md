@@ -9,6 +9,8 @@ Bem-vindo à API do Old Dragon Online! Integre sua aplicação com olddragon.com
 
 ## Início Rápido
 
+Confira uma demonstração de aplicação em [https://olddragon-api-nodejs-demo.fly.dev](https://olddragon-api-nodejs-demo.fly.dev) e seu código fonte em  [github.com/burobrasil/olddragon-api-nodejs-demo](https://github.com/burobrasil/olddragon-api-nodejs-demo) (você pode fazer um _fork_ e lançar uma cópia no [Fly.io](https://fly.io)).
+
 ### cURL
 ```bash
 # Listar monstros públicos (sem autenticação)
@@ -125,7 +127,6 @@ A API suporta CORS para permitir chamadas de navegadores web:
 ## Endpoints da API
 
 ### Conteúdo Público (sem autenticação necessária)
-- [Campanhas](capitulos/campanhas.md) - `/campanhas.json`
 - [Classes](capitulos/classes.md) - `/classes.json`
 - [Equipamentos](capitulos/equipamentos.md) - `/equipamentos.json`
 - [Livros](capitulos/livros.md) - `/livros.json`
@@ -133,8 +134,11 @@ A API suporta CORS para permitir chamadas de navegadores web:
 - [Monstros](capitulos/monstros.md) - `/monstros.json`
 - [Raças](capitulos/racas.md) - `/racas.json`
 
+**Nota**: Campanhas e personagens específicos (`/campanhas/ID.json` e `/personagens/ID.json`) podem ser acessados sem autenticação.
+
 ### Conteúdo Privado (autenticação obrigatória)
-- [Personagens](capitulos/personagens.md) - `/personagens.json`
+- [Campanhas](capitulos/campanhas.md) - `/campanhas.json` (listar suas campanhas)
+- [Personagens](capitulos/personagens.md) - `/personagens.json` (listar seus personagens)
 - [Acesso](capitulos/acesso.md) - Controle de acesso a conteúdo exclusivo
 
 ### Níveis de Acesso ao Conteúdo
@@ -199,7 +203,6 @@ http PUT https://olddragon.com.br/personagens/ID_PERSONAGEM/pv.json \
 ## Suporte
 
 **Email**: odonline@olddragon.com.br
-**Site**: https://olddragon.com.br
 
 ## Licença
 
