@@ -429,6 +429,12 @@ _Parâmetros opcionais de URL_:
 curl -s https://olddragon.com.br/classes.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/classes.json
+```
+
 Obter classe específica
 ------------------------
 
@@ -591,4 +597,10 @@ Obter classe específica
 
 ``` shell
 curl -s https://olddragon.com.br/classes/necromante.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/classes/necromante.json
 ```

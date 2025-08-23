@@ -64,11 +64,20 @@ https://olddragon.com.br/authorize?
 
 Quando receber erro 401, use o refresh token:
 
+#### cURL
 ```bash
 curl -X POST https://olddragon.com.br/token \
   -d "grant_type=refresh_token" \
   -d "refresh_token=SEU_REFRESH_TOKEN" \
   -d "client_id=SEU_CLIENT_ID"
+```
+
+#### HTTPie
+```bash
+http --form POST https://olddragon.com.br/token \
+  grant_type=refresh_token \
+  refresh_token=SEU_REFRESH_TOKEN \
+  client_id=SEU_CLIENT_ID
 ```
 
 ## Importante: Use Bibliotecas OAuth Estabelecidas

@@ -10,6 +10,8 @@ Endpoints:
 Listar campanhas
 ----------------
 
+**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
+
 * `GET /campanhas.json` retorna todas as campanhas do usuário autenticado.
 
 _Parâmetros opcionais de URL_:
@@ -56,11 +58,21 @@ _Parâmetros opcionais de URL_:
 ###### Copiar como cURL
 
 ``` shell
-curl -s https://olddragon.com.br/campanhas.json
+curl -s -H "Authorization: Bearer SEU_TOKEN" \
+     https://olddragon.com.br/campanhas.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/campanhas.json \
+     Authorization:"Bearer SEU_TOKEN"
 ```
 
 Obter campanha específica
 ------------------------
+
+**Autenticação opcional**: Este endpoint pode ser acessado sem autenticação.
 
 - `GET /campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json` retorna a campanha específica para a ID informada (neste exemplo, a ID é `261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4`).
 
@@ -106,8 +118,16 @@ Obter campanha específica
 curl -s https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json
+```
+
 Listar personagens em uma campanha
 ----------------------------------
+
+**Autenticação opcional**: Este endpoint pode ser acessado sem autenticação.
 
 - `GET /campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4/personagens.json` retorna todos os personagens em uma campanha específica para a ID informada (neste exemplo, a ID é `261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4`).
 
@@ -443,4 +463,10 @@ Listar personagens em uma campanha
 
 ``` shell
 curl -s https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4/personagens.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4/personagens.json
 ```

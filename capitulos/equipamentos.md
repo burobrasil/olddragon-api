@@ -138,6 +138,12 @@ _Parâmetros opcionais de URL_:
 curl -s https://olddragon.com.br/equipamentos.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/equipamentos.json
+```
+
 Obter equipamento específico
 ------------------------
 
@@ -175,4 +181,10 @@ Obter equipamento específico
 
 ``` shell
 curl -s https://olddragon.com.br/equipamentos/adaga.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/equipamentos/adaga.json
 ```

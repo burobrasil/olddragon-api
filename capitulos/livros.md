@@ -58,6 +58,12 @@ _Parâmetros opcionais de URL_:
 curl -s https://olddragon.com.br/livros.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/livros.json
+```
+
 Obter livro específico
 ----------------------
 
@@ -79,4 +85,10 @@ Obter livro específico
 
 ``` shell
 curl -s https://olddragon.com.br/livros/ajuda.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/livros/ajuda.json
 ```

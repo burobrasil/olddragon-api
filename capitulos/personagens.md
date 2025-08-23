@@ -9,6 +9,8 @@ Endpoints:
 Listar personagens
 ------------------
 
+**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
+
 * `GET /personagens.json` retorna todos os personagens do usuário autenticado.
 
 _Parâmetros opcionais de URL_:
@@ -345,11 +347,21 @@ _Parâmetros opcionais de URL_:
 ###### Copiar como cURL
 
 ``` shell
-curl -s https://olddragon.com.br/personagens.json
+curl -s -H "Authorization: Bearer SEU_TOKEN" \
+     https://olddragon.com.br/personagens.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/personagens.json \
+     Authorization:"Bearer SEU_TOKEN"
 ```
 
 Obter personagem específico
 ---------------------------
+
+**Autenticação opcional**: Este endpoint pode ser acessado sem autenticação.
 
 - `GET /personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json` retorna o personagem específica para a ID informada (neste exemplo, a ID é `59a2adaf-96e6-4569-827b-a172982cf13c`).
 
@@ -685,8 +697,16 @@ Obter personagem específico
 curl -s https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
+```
+
 Atualizar Pontos de Vida de personagem
 --------------------------------------
+
+**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
 
 - `PUT /personagens/59a2adaf-96e6-4569-827b-a172982cf13c/pv.json` atualiza os Pontos de Vida (PV) do personagem específico para a ID informada (neste exemplo, a ID é `59a2adaf-96e6-4569-827b-a172982cf13c`).
 
@@ -711,8 +731,18 @@ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
   https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/pv.json
 ```
 
+###### Copiar como HTTPie
+
+``` shell
+http PUT https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/pv.json \
+  Authorization:"Bearer $ACCESS_TOKEN" \
+  health_points:=1
+```
+
 Atualizar Experiência de personagem
 --------------------------------------
+
+**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
 
 - `PUT /personagens/59a2adaf-96e6-4569-827b-a172982cf13c/xp.json` atualiza a Experiência (XP) do personagem específico para a ID informada (neste exemplo, a ID é `59a2adaf-96e6-4569-827b-a172982cf13c`).
 
@@ -735,4 +765,12 @@ Atualizar Experiência de personagem
 curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
   -d '{"experience_points": 20000}' \
   https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/xp.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http PUT https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/xp.json \
+  Authorization:"Bearer $ACCESS_TOKEN" \
+  experience_points:=20000
 ```

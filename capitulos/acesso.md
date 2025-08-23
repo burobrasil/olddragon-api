@@ -70,15 +70,31 @@ Use essas informações para:
 ## Verificar Licenças
 
 ### Listar Livros do Usuário
+
+#### cURL
 ```bash
 curl -H "Authorization: Bearer TOKEN" \
      https://olddragon.com.br/meus-livros.json
 ```
 
+#### HTTPie
+```bash
+http https://olddragon.com.br/meus-livros.json \
+     Authorization:"Bearer TOKEN"
+```
+
 ### Status da Assinatura
+
+#### cURL
 ```bash
 curl -H "Authorization: Bearer TOKEN" \
      https://olddragon.com.br/assinatura.json
+```
+
+#### HTTPie
+```bash
+http https://olddragon.com.br/assinatura.json \
+     Authorization:"Bearer TOKEN"
 ```
 
 Assinantes têm acesso completo aos livros básicos (LB1, LB2, LB3) e conteúdo exclusivo.
