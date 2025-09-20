@@ -703,74 +703,148 @@ curl -s https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13
 http https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
 ```
 
-Atualizar Pontos de Vida de personagem
---------------------------------------
+Atualizar atributos de personagem
+----------------------------------
 
 **Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
 
-- `PUT /personagens/59a2adaf-96e6-4569-827b-a172982cf13c/pv.json` atualiza os Pontos de Vida (PV) do personagem específico para a ID informada (neste exemplo, a ID é `59a2adaf-96e6-4569-827b-a172982cf13c`).
+- `PATCH /personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json` atualiza atributos do personagem específico para a ID informada (neste exemplo, a ID é `59a2adaf-96e6-4569-827b-a172982cf13c`).
 
-**Parâmetros**: Requisições devem incluir os seguintes parâmetros:
+**Parâmetros disponíveis**: Você pode atualizar um ou mais dos seguintes atributos em uma única requisição:
 
 * `health_points`: Pontos de Vida (PV) atuais do personagem, entre 0 e o máximo de PV do personagem (legível em `max_hp` no personagem).
+* `experience_points`: Experiência (XP) atuais do personagem, no mínimo 0.
+* `money_gp`: Peças de ouro (PO) do personagem, no mínimo 0.
+* `money_sp`: Peças de prata (PP) do personagem, no mínimo 0.
+* `money_cp`: Peças de cobre (PC) do personagem, no mínimo 0.
+* `notes`: Notas do personagem (texto livre).
+* `resource_uses`: Usos de recursos do personagem. Listagem em formato de lista (array) de texto.
+
+### Exemplos de uso
+
+#### Atualizar Pontos de Vida
 
 ###### Exemplo de requisição JSON
-<!-- START characters_put_request.json -->
 ```json
 {
-  "health_points": 1
+  "health_points": 15
 }
 ```
-<!-- END characters_put_request.json -->
 
 ###### Copiar como cURL
-
 ``` shell
-curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
-  -d '{"health_points": 1}' \
-  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/pv.json
+curl -X PATCH -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
+  -d '{"health_points": 15}' \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
 ```
 
 ###### Copiar como HTTPie
-
 ``` shell
-http PUT https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/pv.json \
+http PATCH https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json \
   Authorization:"Bearer $ACCESS_TOKEN" \
-  health_points:=1
+  health_points:=15
 ```
 
-Atualizar Experiência de personagem
---------------------------------------
-
-**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
-
-- `PUT /personagens/59a2adaf-96e6-4569-827b-a172982cf13c/xp.json` atualiza a Experiência (XP) do personagem específico para a ID informada (neste exemplo, a ID é `59a2adaf-96e6-4569-827b-a172982cf13c`).
-
-**Parâmetros**: Requisições devem incluir os seguintes parâmetros:
-
-* `experience_points`: Experiência (XP) atuais do personagem, no mínimo 0.
+#### Atualizar Experiência
 
 ###### Exemplo de requisição JSON
-<!-- START characters_put_request.json -->
 ```json
 {
   "experience_points": 20000
 }
 ```
-<!-- END characters_put_request.json -->
 
 ###### Copiar como cURL
-
 ``` shell
-curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
+curl -X PATCH -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
   -d '{"experience_points": 20000}' \
-  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/xp.json
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
 ```
 
 ###### Copiar como HTTPie
-
 ``` shell
-http PUT https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/xp.json \
+http PATCH https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json \
   Authorization:"Bearer $ACCESS_TOKEN" \
   experience_points:=20000
+```
+
+#### Atualizar Economia (Moedas)
+
+###### Exemplo de requisição JSON
+```json
+{
+  "money_gp": 100,
+  "money_sp": 50,
+  "money_cp": 25
+}
+```
+
+###### Copiar como cURL
+``` shell
+curl -X PATCH -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
+  -d '{"money_gp": 100, "money_sp": 50, "money_cp": 25}' \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
+```
+
+###### Copiar como HTTPie
+``` shell
+http PATCH https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json \
+  Authorization:"Bearer $ACCESS_TOKEN" \
+  money_gp:=100 \
+  money_sp:=50 \
+  money_cp:=25
+```
+
+#### Atualizar Notas
+
+###### Exemplo de requisição JSON
+```json
+{
+  "notes": "Encontrei uma chave misteriosa na última masmorra. Precisamos investigar a porta secreta no templo abandonado."
+}
+```
+
+###### Copiar como cURL
+``` shell
+curl -X PATCH -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
+  -d '{"notes": "Encontrei uma chave misteriosa na última masmorra. Precisamos investigar a porta secreta no templo abandonado."}' \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
+```
+
+###### Copiar como HTTPie
+``` shell
+http PATCH https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json \
+  Authorization:"Bearer $ACCESS_TOKEN" \
+  notes="Encontrei uma chave misteriosa na última masmorra. Precisamos investigar a porta secreta no templo abandonado."
+```
+
+#### Atualizar Múltiplos Atributos
+
+Você pode atualizar vários atributos em uma única requisição:
+
+###### Exemplo de requisição JSON
+```json
+{
+  "health_points": 25,
+  "experience_points": 15000,
+  "money_gp": 200,
+  "notes": "Nível 5 alcançado!"
+}
+```
+
+###### Copiar como cURL
+``` shell
+curl -X PATCH -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
+  -d '{"health_points": 25, "experience_points": 15000, "money_gp": 200, "notes": "Nível 5 alcançado!"}' \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
+```
+
+###### Copiar como HTTPie
+``` shell
+http PATCH https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json \
+  Authorization:"Bearer $ACCESS_TOKEN" \
+  health_points:=25 \
+  experience_points:=15000 \
+  money_gp:=200 \
+  notes="Nível 5 alcançado!"
 ```
