@@ -5,6 +5,11 @@ Endpoints:
 
 - [Listar personagens](#listar-personagens)
 - [Obter personagem específico](#obter-personagem-específico)
+- [Itens de Inventário](#itens-de-inventário)
+  - [Criar item de inventário](#criar-item-de-inventário)
+  - [Obter item de inventário específico](#obter-item-de-inventário-específico)
+  - [Atualizar item de inventário](#atualizar-item-de-inventário)
+  - [Remover item de inventário](#remover-item-de-inventário)
 
 Listar personagens
 ------------------
@@ -46,15 +51,15 @@ _Parâmetros opcionais de URL_:
     "bac": 7,
     "bad": 6,
     "jpd": 9,
-    "jpc": 8,
+    "jpc": 9,
     "jps": 8,
     "current_movement": 9,
     "movement_run": 18,
     "movement_climb": 7,
     "movement_swim": 4,
+    "movement_fly": 0,
     "infravision": 0,
     "experience_points": 11520,
-    "race_jp": "none",
     "money_gp": 0,
     "money_sp": 0,
     "money_cp": 0,
@@ -67,8 +72,10 @@ _Parâmetros opcionais de URL_:
     "personality": "Humilde (Sobre todo o resto); Calmo (Sobre si mesmo); Extrovertido (Sobre outras pessoas)",
     "background": "Filho de um ferreiro das montanhas do norte de Valansia, Evendur aprendeu desde cedo o valor da honra e força em batalha.Depois de perder seu grupo de amigos, vagou até conhecer Dorgauth, o anão guerreiro, que se tornou seu irmão-em-armas e o incentivou a viver e ganhar glórias para honrar seus amigos mortos.",
     "notes": "",
+    "resource_uses": [],
     "inventory_items": [
       {
+        "id": "2a224ee0-ba3c-55f1-bd25-442fe7e4cde8",
         "position": 0,
         "quantity": 2,
         "equipped": false,
@@ -99,9 +106,11 @@ _Parâmetros opcionais de URL_:
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/2a224ee0-ba3c-55f1-bd25-442fe7e4cde8.json"
       },
       {
+        "id": "c51b8c3b-e4a5-5fd9-8b9a-d450466ff052",
         "position": 1,
         "quantity": 1,
         "equipped": true,
@@ -132,9 +141,11 @@ _Parâmetros opcionais de URL_:
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/c51b8c3b-e4a5-5fd9-8b9a-d450466ff052.json"
       },
       {
+        "id": "02fd87a9-db9a-5a2e-8a95-b49e6be599c3",
         "position": 2,
         "quantity": 1,
         "equipped": true,
@@ -165,9 +176,11 @@ _Parâmetros opcionais de URL_:
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json"
       },
       {
+        "id": "80909d52-9daa-5d1c-8234-39574f1c9e5f",
         "position": 3,
         "quantity": 1,
         "equipped": true,
@@ -198,9 +211,11 @@ _Parâmetros opcionais de URL_:
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/80909d52-9daa-5d1c-8234-39574f1c9e5f.json"
       },
       {
+        "id": "8b0d8525-bb4a-5792-abaa-3876c093ed94",
         "position": 4,
         "quantity": 1,
         "equipped": false,
@@ -231,9 +246,11 @@ _Parâmetros opcionais de URL_:
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/8b0d8525-bb4a-5792-abaa-3876c093ed94.json"
       },
       {
+        "id": "4fcf3e9a-afa8-5f05-aae7-8dc70869be3d",
         "position": 5,
         "quantity": 1,
         "equipped": false,
@@ -264,9 +281,11 @@ _Parâmetros opcionais de URL_:
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/4fcf3e9a-afa8-5f05-aae7-8dc70869be3d.json"
       },
       {
+        "id": "651ec4a3-7a51-5e36-b694-19932e6a8286",
         "position": 6,
         "quantity": 1,
         "equipped": false,
@@ -297,9 +316,11 @@ _Parâmetros opcionais de URL_:
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/651ec4a3-7a51-5e36-b694-19932e6a8286.json"
       },
       {
+        "id": "5ce8886b-6aca-5ea9-869f-9473099a1cef",
         "position": 8,
         "quantity": 3,
         "equipped": false,
@@ -330,7 +351,15 @@ _Parâmetros opcionais de URL_:
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/5ce8886b-6aca-5ea9-869f-9473099a1cef.json"
+      }
+    ],
+    "race_mechanic_selections": [
+      {
+        "character_race_ability_id": "6212eb13-e641-4049-89b4-c91c9d2b3182",
+        "ability_name": "Adaptabilidade",
+        "selection_key": "jpc"
       }
     ],
     "character_race_name": "Humano",
@@ -393,15 +422,15 @@ Obter personagem específico
   "bac": 7,
   "bad": 6,
   "jpd": 9,
-  "jpc": 8,
+  "jpc": 9,
   "jps": 8,
   "current_movement": 9,
   "movement_run": 18,
   "movement_climb": 7,
   "movement_swim": 4,
+  "movement_fly": 0,
   "infravision": 0,
   "experience_points": 11520,
-  "race_jp": "none",
   "money_gp": 0,
   "money_sp": 0,
   "money_cp": 0,
@@ -414,8 +443,10 @@ Obter personagem específico
   "personality": "Humilde (Sobre todo o resto); Calmo (Sobre si mesmo); Extrovertido (Sobre outras pessoas)",
   "background": "Filho de um ferreiro das montanhas do norte de Valansia, Evendur aprendeu desde cedo o valor da honra e força em batalha.Depois de perder seu grupo de amigos, vagou até conhecer Dorgauth, o anão guerreiro, que se tornou seu irmão-em-armas e o incentivou a viver e ganhar glórias para honrar seus amigos mortos.",
   "notes": "",
+  "resource_uses": [],
   "inventory_items": [
     {
+      "id": "2a224ee0-ba3c-55f1-bd25-442fe7e4cde8",
       "position": 0,
       "quantity": 2,
       "equipped": false,
@@ -446,9 +477,11 @@ Obter personagem específico
       "two_handed": false,
       "versatile": false,
       "wooden": false,
-      "bonus_ba": null
+      "bonus_ba": null,
+      "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/2a224ee0-ba3c-55f1-bd25-442fe7e4cde8.json"
     },
     {
+      "id": "c51b8c3b-e4a5-5fd9-8b9a-d450466ff052",
       "position": 1,
       "quantity": 1,
       "equipped": true,
@@ -479,9 +512,11 @@ Obter personagem específico
       "two_handed": false,
       "versatile": false,
       "wooden": false,
-      "bonus_ba": null
+      "bonus_ba": null,
+      "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/c51b8c3b-e4a5-5fd9-8b9a-d450466ff052.json"
     },
     {
+      "id": "02fd87a9-db9a-5a2e-8a95-b49e6be599c3",
       "position": 2,
       "quantity": 1,
       "equipped": true,
@@ -512,9 +547,11 @@ Obter personagem específico
       "two_handed": false,
       "versatile": false,
       "wooden": false,
-      "bonus_ba": null
+      "bonus_ba": null,
+      "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json"
     },
     {
+      "id": "80909d52-9daa-5d1c-8234-39574f1c9e5f",
       "position": 3,
       "quantity": 1,
       "equipped": true,
@@ -545,9 +582,11 @@ Obter personagem específico
       "two_handed": false,
       "versatile": false,
       "wooden": false,
-      "bonus_ba": null
+      "bonus_ba": null,
+      "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/80909d52-9daa-5d1c-8234-39574f1c9e5f.json"
     },
     {
+      "id": "8b0d8525-bb4a-5792-abaa-3876c093ed94",
       "position": 4,
       "quantity": 1,
       "equipped": false,
@@ -578,9 +617,11 @@ Obter personagem específico
       "two_handed": false,
       "versatile": false,
       "wooden": false,
-      "bonus_ba": null
+      "bonus_ba": null,
+      "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/8b0d8525-bb4a-5792-abaa-3876c093ed94.json"
     },
     {
+      "id": "4fcf3e9a-afa8-5f05-aae7-8dc70869be3d",
       "position": 5,
       "quantity": 1,
       "equipped": false,
@@ -611,9 +652,11 @@ Obter personagem específico
       "two_handed": false,
       "versatile": false,
       "wooden": false,
-      "bonus_ba": null
+      "bonus_ba": null,
+      "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/4fcf3e9a-afa8-5f05-aae7-8dc70869be3d.json"
     },
     {
+      "id": "651ec4a3-7a51-5e36-b694-19932e6a8286",
       "position": 6,
       "quantity": 1,
       "equipped": false,
@@ -644,9 +687,11 @@ Obter personagem específico
       "two_handed": false,
       "versatile": false,
       "wooden": false,
-      "bonus_ba": null
+      "bonus_ba": null,
+      "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/651ec4a3-7a51-5e36-b694-19932e6a8286.json"
     },
     {
+      "id": "5ce8886b-6aca-5ea9-869f-9473099a1cef",
       "position": 8,
       "quantity": 3,
       "equipped": false,
@@ -677,7 +722,15 @@ Obter personagem específico
       "two_handed": false,
       "versatile": false,
       "wooden": false,
-      "bonus_ba": null
+      "bonus_ba": null,
+      "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/5ce8886b-6aca-5ea9-869f-9473099a1cef.json"
+    }
+  ],
+  "race_mechanic_selections": [
+    {
+      "character_race_ability_id": "6212eb13-e641-4049-89b4-c91c9d2b3182",
+      "ability_name": "Adaptabilidade",
+      "selection_key": "jpc"
     }
   ],
   "character_race_name": "Humano",
@@ -702,6 +755,36 @@ curl -s https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13
 ``` shell
 http https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json
 ```
+
+### Seleções de Habilidades Raciais (Race Mechanic Selections)
+
+O campo `race_mechanic_selections` contém as escolhas que o jogador fez para habilidades raciais que requerem seleção durante a criação do personagem.
+
+**Importante**: Este array só aparece quando o personagem possui habilidades raciais que requerem uma escolha do jogador. A maioria das habilidades raciais é aplicada automaticamente e não requer seleção.
+
+#### Quando uma seleção é necessária
+
+Nem todas as habilidades raciais requerem seleção. Existem dois tipos de habilidades que exigem escolha do jogador:
+
+1. **Bônus em Jogada de Proteção (`bonus_jp`)**: O jogador escolhe qual JP recebe o bônus
+   - Exemplo: Humanos podem escolher entre `jpc`, `jpd` ou `jps`
+   - Apenas uma escolha é permitida por habilidade
+
+2. **Construção Variável (`variable_construction`)**: O jogador escolhe opções customizadas para raças especiais
+   - Exemplo: Autokthon pode escolher entre arma embutida, armadura leve, arpéu, asas, etc.
+   - Pode permitir escolhas personalizadas (custom) onde o jogador define nome e descrição
+
+#### Campos do objeto de seleção
+
+* `character_race_ability_id`: ID da habilidade racial para a qual a seleção foi feita
+* `ability_name`: Nome da habilidade racial (ex: "Adaptabilidade", "Construção")
+* `selection_key`: Chave da opção selecionada
+  - Para `bonus_jp`: "jpc", "jpd" ou "jps"
+  - Para `variable_construction`: chave da opção predefinida (ex: "arma_embutida", "armadura_leve") ou "custom" para opções personalizadas
+* `custom_name` (opcional): Nome personalizado quando `selection_key` é "custom"
+* `custom_description` (opcional): Descrição personalizada quando `selection_key` é "custom"
+
+**Nota**: Para ver todas as opções disponíveis para uma habilidade racial, consulte o endpoint da raça (`/racas/:slug.json`) e verifique o campo `mechanic_config` das habilidades com `mechanic_type` igual a `bonus_jp` ou `variable_construction`.
 
 Atualizar atributos de personagem
 ----------------------------------
@@ -847,4 +930,305 @@ http PATCH https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982c
   experience_points:=15000 \
   money_gp:=200 \
   notes="Nível 5 alcançado!"
+```
+
+Itens de Inventário
+===================
+
+Os itens de inventário representam o equipamento, armas, armaduras e outros objetos que um personagem carrega. Cada item pode ter diversas propriedades que afetam o personagem, como peso, custo, bônus de combate, entre outros.
+
+**Nota**: Para listar os itens de inventário de um personagem, use o endpoint [Obter personagem específico](#obter-personagem-específico), que retorna todos os dados do personagem incluindo o array `inventory_items` com todos os itens. Cada item no array inclui os campos `id` e `url` que podem ser usados para atualizar ou remover itens específicos.
+
+Criar item de inventário
+------------------------
+
+**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
+
+* `POST /personagens/:character_id/inventario.json` cria um novo item de inventário para o personagem.
+
+**Parâmetros obrigatórios**:
+
+* `name`: Nome do item
+* `concept`: Conceito/tipo do item
+  - `weapon`: Arma (pode ser equipada)
+  - `armor`: Armadura (pode ser equipada)
+  - `shield`: Escudo (pode ser equipado)
+  - `container`: Recipiente (não pode ser equipado)
+  - `misc`: Diversos (não pode ser equipado)
+  - `vehicle`: Veículo (não pode ser equipado)
+  - `kit`: Kit de itens (não pode ser equipado)
+
+**Parâmetros opcionais**:
+
+* `quantity` (Quantidade): Quantidade do item (padrão: 1)
+* `equipped` (Equipado?): Se o item está equipado (padrão: false)
+  - **Importante**: Apenas itens com `concept` igual a `weapon`, `armor` ou `shield` podem ser equipados
+  - Se você tentar equipar um item de outro tipo (como `misc`, `container`, `vehicle`, `kit`), receberá um erro de validação
+* `cost` (Custo): Custo unitário em peças de cobre
+* `weight_in_load` (Peso em carga): Peso em unidades de carga
+* `weight_in_grams` (Peso em gramas): Peso em gramas
+* `description` (Descrição): Descrição do item
+* `magic_item` (Item mágico): Se é um item mágico (padrão: false)
+* `damage_type` (Tipo de dano): Tipo de dano
+  - `none` - Nenhum
+  - `slashing` - Cortante
+  - `piercing` - Perfurante
+  - `bludgeoning` - Impactante
+* `damage` (Dano): Dado de dano (ex: "1d6", "1d8")
+* `bonus_ca` (Bônus na CA): Bônus de Classe de Armadura
+* `bonus_ba` (Bônus na BA): Bônus de Ataque
+* `bonus_damage` (Bônus no dano): Bônus de dano
+* `increases_load_by` (Aumenta carga em): Quanto aumenta a carga do personagem (apenas para recipientes)
+* `shoot_range` (Alcance disparo): Alcance de disparo em metros
+* `throw_range` (Alcance arremesso): Alcance de arremesso em metros
+* **Flags booleanas** (apenas para armas):
+  - `arrow` (Flecha): Se é uma flecha
+  - `bolt` (Virote): Se é um virote
+  - `bolt_small` (Virote pequeno): Se é um virote pequeno
+  - `counter_attack` (Contrainvestida): Permite contrainvestida
+  - `mounted` (Montada): Arma montada
+  - `polearm` (Haste): Arma de haste
+  - `recharge` (Recarga): Requer recarga
+  - `two_handed` (Duas mãos): Requer duas mãos
+  - `versatile` (Versátil): Pode ser usada com uma ou duas mãos
+  - `wooden` (Madeira): Feita de madeira
+
+**Observação sobre campos específicos por tipo**:
+- Campos de arma (`damage`, `damage_type`, `bonus_ba`, `bonus_damage`, `shoot_range`, `throw_range`, flags booleanas) são válidos apenas para itens com `concept: "weapon"`
+- Campo `bonus_ca` é válido para armas, armaduras e escudos (`weapon`, `armor`, `shield`)
+- Campo `increases_load_by` é válido apenas para recipientes (`concept: "container"`)
+
+###### Exemplo de requisição JSON
+```json
+{
+  "inventory_item": {
+    "name": "Adaga",
+    "concept": "weapon",
+    "quantity": 1,
+    "equipped": true,
+    "cost": 200,
+    "weight_in_load": 0,
+    "description": "Pequena, Cortante ou Perfurante.",
+    "damage_type": "slashing",
+    "damage": "1d4"
+  }
+}
+```
+
+###### Exemplo de resposta JSON
+<!-- START characters_inventory_items_create.json -->
+```json
+{
+  "id": "3d3706f8-0b1c-412a-bec0-6f2c87bdc2f5",
+  "position": 9,
+  "quantity": 1,
+  "equipped": true,
+  "equippable?": true,
+  "name": "Adaga",
+  "concept": "weapon",
+  "cost": 200,
+  "total_cost": 200,
+  "weight_in_load": 0,
+  "weight_in_grams": null,
+  "sum_weight_in_grams": 0,
+  "description": "Pequena, Cortante ou Perfurante.",
+  "magic_item": false,
+  "damage_type": "slashing",
+  "damage": "1d4",
+  "bonus_ca": null,
+  "bonus_damage": null,
+  "increases_load_by": null,
+  "shoot_range": null,
+  "throw_range": null,
+  "arrow": false,
+  "bolt": false,
+  "bolt_small": false,
+  "counter_attack": false,
+  "mounted": false,
+  "polearm": false,
+  "recharge": false,
+  "two_handed": false,
+  "versatile": false,
+  "wooden": false,
+  "bonus_ba": null,
+  "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/3d3706f8-0b1c-412a-bec0-6f2c87bdc2f5.json"
+}
+```
+<!-- END characters_inventory_items_create.json -->
+
+###### Copiar como cURL
+
+``` shell
+curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
+  -d '{"inventory_item": {"name": "Adaga", "concept": "weapon", "quantity": 1, "equipped": true, "cost": 200, "weight_in_load": 0, "description": "Pequena, Cortante ou Perfurante.", "damage_type": "slashing", "damage": "1d4"}}' \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http POST https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario.json \
+  Authorization:"Bearer $ACCESS_TOKEN" \
+  inventory_item:='{"name": "Adaga", "concept": "weapon", "quantity": 1, "equipped": true, "cost": 200, "weight_in_load": 0, "description": "Pequena, Cortante ou Perfurante.", "damage_type": "slashing", "damage": "1d4"}'
+```
+
+Obter item de inventário específico
+------------------------------------
+
+**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
+
+* `GET /personagens/:character_id/inventario/:id.json` retorna um item de inventário específico do personagem.
+
+###### Exemplo de resposta JSON
+<!-- START characters_inventory_items_show.json -->
+```json
+{
+  "id": "02fd87a9-db9a-5a2e-8a95-b49e6be599c3",
+  "position": 2,
+  "quantity": 1,
+  "equipped": true,
+  "equippable?": true,
+  "name": "Espada Curta",
+  "concept": "weapon",
+  "cost": 600,
+  "total_cost": 600,
+  "weight_in_load": 1,
+  "weight_in_grams": null,
+  "sum_weight_in_grams": 1000,
+  "description": "Pequena, Cortante.",
+  "magic_item": false,
+  "damage_type": "slashing",
+  "damage": "1d6",
+  "bonus_ca": null,
+  "bonus_damage": null,
+  "increases_load_by": null,
+  "shoot_range": null,
+  "throw_range": null,
+  "arrow": false,
+  "bolt": false,
+  "bolt_small": false,
+  "counter_attack": false,
+  "mounted": false,
+  "polearm": false,
+  "recharge": false,
+  "two_handed": false,
+  "versatile": false,
+  "wooden": false,
+  "bonus_ba": null,
+  "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json"
+}
+```
+<!-- END characters_inventory_items_show.json -->
+
+###### Copiar como cURL
+
+``` shell
+curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json \
+  Authorization:"Bearer $ACCESS_TOKEN"
+```
+
+Atualizar item de inventário
+----------------------------
+
+**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
+
+* `PATCH /personagens/:character_id/inventario/:id.json` atualiza um item de inventário existente.
+
+Você pode atualizar qualquer um dos parâmetros listados na seção [Criar item de inventário](#criar-item-de-inventário).
+
+###### Exemplo de requisição JSON
+```json
+{
+  "inventory_item": {
+    "equipped": false,
+    "quantity": 2
+  }
+}
+```
+
+###### Exemplo de resposta JSON
+<!-- START characters_inventory_items_update.json -->
+```json
+{
+  "id": "02fd87a9-db9a-5a2e-8a95-b49e6be599c3",
+  "position": 2,
+  "quantity": 2,
+  "equipped": false,
+  "equippable?": true,
+  "name": "Espada Curta",
+  "concept": "weapon",
+  "cost": 600,
+  "total_cost": 1200,
+  "weight_in_load": 1,
+  "weight_in_grams": null,
+  "sum_weight_in_grams": 2000,
+  "description": "Pequena, Cortante.",
+  "magic_item": false,
+  "damage_type": "slashing",
+  "damage": "1d6",
+  "bonus_ca": null,
+  "bonus_damage": null,
+  "increases_load_by": null,
+  "shoot_range": null,
+  "throw_range": null,
+  "arrow": false,
+  "bolt": false,
+  "bolt_small": false,
+  "counter_attack": false,
+  "mounted": false,
+  "polearm": false,
+  "recharge": false,
+  "two_handed": false,
+  "versatile": false,
+  "wooden": false,
+  "bonus_ba": null,
+  "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json"
+}
+```
+<!-- END characters_inventory_items_update.json -->
+
+###### Copiar como cURL
+
+``` shell
+curl -X PATCH -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" \
+  -d '{"inventory_item": {"equipped": false, "quantity": 2}}' \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http PATCH https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json \
+  Authorization:"Bearer $ACCESS_TOKEN" \
+  inventory_item:='{"equipped": false, "quantity": 2}'
+```
+
+Remover item de inventário
+--------------------------
+
+**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
+
+* `DELETE /personagens/:character_id/inventario/:id.json` remove um item de inventário do personagem.
+
+O endpoint retorna status `204 No Content` em caso de sucesso.
+
+###### Copiar como cURL
+
+``` shell
+curl -X DELETE -H "Authorization: Bearer $ACCESS_TOKEN" \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http DELETE https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json \
+  Authorization:"Bearer $ACCESS_TOKEN"
 ```

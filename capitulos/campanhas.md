@@ -160,15 +160,15 @@ Listar personagens em uma campanha
     "bac": 7,
     "bad": 6,
     "jpd": 9,
-    "jpc": 8,
+    "jpc": 9,
     "jps": 8,
     "current_movement": 9,
     "movement_run": 18,
     "movement_climb": 7,
     "movement_swim": 4,
+    "movement_fly": 0,
     "infravision": 0,
     "experience_points": 11520,
-    "race_jp": "none",
     "money_gp": 0,
     "money_sp": 0,
     "money_cp": 0,
@@ -181,8 +181,10 @@ Listar personagens em uma campanha
     "personality": "Humilde (Sobre todo o resto); Calmo (Sobre si mesmo); Extrovertido (Sobre outras pessoas)",
     "background": "Filho de um ferreiro das montanhas do norte de Valansia, Evendur aprendeu desde cedo o valor da honra e força em batalha.Depois de perder seu grupo de amigos, vagou até conhecer Dorgauth, o anão guerreiro, que se tornou seu irmão-em-armas e o incentivou a viver e ganhar glórias para honrar seus amigos mortos.",
     "notes": "",
+    "resource_uses": [],
     "inventory_items": [
       {
+        "id": "2a224ee0-ba3c-55f1-bd25-442fe7e4cde8",
         "position": 0,
         "quantity": 2,
         "equipped": false,
@@ -213,9 +215,11 @@ Listar personagens em uma campanha
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/2a224ee0-ba3c-55f1-bd25-442fe7e4cde8.json"
       },
       {
+        "id": "c51b8c3b-e4a5-5fd9-8b9a-d450466ff052",
         "position": 1,
         "quantity": 1,
         "equipped": true,
@@ -246,9 +250,11 @@ Listar personagens em uma campanha
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/c51b8c3b-e4a5-5fd9-8b9a-d450466ff052.json"
       },
       {
+        "id": "02fd87a9-db9a-5a2e-8a95-b49e6be599c3",
         "position": 2,
         "quantity": 1,
         "equipped": true,
@@ -279,9 +285,11 @@ Listar personagens em uma campanha
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json"
       },
       {
+        "id": "80909d52-9daa-5d1c-8234-39574f1c9e5f",
         "position": 3,
         "quantity": 1,
         "equipped": true,
@@ -312,9 +320,11 @@ Listar personagens em uma campanha
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/80909d52-9daa-5d1c-8234-39574f1c9e5f.json"
       },
       {
+        "id": "8b0d8525-bb4a-5792-abaa-3876c093ed94",
         "position": 4,
         "quantity": 1,
         "equipped": false,
@@ -345,9 +355,11 @@ Listar personagens em uma campanha
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/8b0d8525-bb4a-5792-abaa-3876c093ed94.json"
       },
       {
+        "id": "4fcf3e9a-afa8-5f05-aae7-8dc70869be3d",
         "position": 5,
         "quantity": 1,
         "equipped": false,
@@ -378,9 +390,11 @@ Listar personagens em uma campanha
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/4fcf3e9a-afa8-5f05-aae7-8dc70869be3d.json"
       },
       {
+        "id": "651ec4a3-7a51-5e36-b694-19932e6a8286",
         "position": 6,
         "quantity": 1,
         "equipped": false,
@@ -411,9 +425,11 @@ Listar personagens em uma campanha
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/651ec4a3-7a51-5e36-b694-19932e6a8286.json"
       },
       {
+        "id": "5ce8886b-6aca-5ea9-869f-9473099a1cef",
         "position": 8,
         "quantity": 3,
         "equipped": false,
@@ -444,7 +460,15 @@ Listar personagens em uma campanha
         "two_handed": false,
         "versatile": false,
         "wooden": false,
-        "bonus_ba": null
+        "bonus_ba": null,
+        "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/5ce8886b-6aca-5ea9-869f-9473099a1cef.json"
+      }
+    ],
+    "race_mechanic_selections": [
+      {
+        "character_race_ability_id": "6212eb13-e641-4049-89b4-c91c9d2b3182",
+        "ability_name": "Adaptabilidade",
+        "selection_key": "jpc"
       }
     ],
     "character_race_name": "Humano",
