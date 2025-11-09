@@ -7,6 +7,7 @@ Endpoints:
 - [Obter personagem específico](#obter-personagem-específico)
 - [Itens de Inventário](#itens-de-inventário)
   - [Criar item de inventário](#criar-item-de-inventário)
+  - [Obter item de inventário específico](#obter-item-de-inventário-específico)
   - [Atualizar item de inventário](#atualizar-item-de-inventário)
   - [Remover item de inventário](#remover-item-de-inventário)
 
@@ -1018,7 +1019,7 @@ Criar item de inventário
 <!-- START characters_inventory_items_create.json -->
 ```json
 {
-  "id": "c3456f19-f5a3-4b3d-b784-dce4d2e5b215",
+  "id": "3d3706f8-0b1c-412a-bec0-6f2c87bdc2f5",
   "position": 9,
   "quantity": 1,
   "equipped": true,
@@ -1050,7 +1051,7 @@ Criar item de inventário
   "versatile": false,
   "wooden": false,
   "bonus_ba": null,
-  "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/c3456f19-f5a3-4b3d-b784-dce4d2e5b215.json"
+  "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/3d3706f8-0b1c-412a-bec0-6f2c87bdc2f5.json"
 }
 ```
 <!-- END characters_inventory_items_create.json -->
@@ -1069,6 +1070,68 @@ curl -X POST -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: applicat
 http POST https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario.json \
   Authorization:"Bearer $ACCESS_TOKEN" \
   inventory_item:='{"name": "Adaga", "concept": "weapon", "quantity": 1, "equipped": true, "cost": 200, "weight_in_load": 0, "description": "Pequena, Cortante ou Perfurante.", "damage_type": "slashing", "damage": "1d4"}'
+```
+
+Obter item de inventário específico
+------------------------------------
+
+**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
+
+* `GET /personagens/:character_id/inventario/:id.json` retorna um item de inventário específico do personagem.
+
+###### Exemplo de resposta JSON
+<!-- START characters_inventory_items_show.json -->
+```json
+{
+  "id": "02fd87a9-db9a-5a2e-8a95-b49e6be599c3",
+  "position": 2,
+  "quantity": 1,
+  "equipped": true,
+  "equippable?": true,
+  "name": "Espada Curta",
+  "concept": "weapon",
+  "cost": 600,
+  "total_cost": 600,
+  "weight_in_load": 1,
+  "weight_in_grams": null,
+  "sum_weight_in_grams": 1000,
+  "description": "Pequena, Cortante.",
+  "magic_item": false,
+  "damage_type": "slashing",
+  "damage": "1d6",
+  "bonus_ca": null,
+  "bonus_damage": null,
+  "increases_load_by": null,
+  "shoot_range": null,
+  "throw_range": null,
+  "arrow": false,
+  "bolt": false,
+  "bolt_small": false,
+  "counter_attack": false,
+  "mounted": false,
+  "polearm": false,
+  "recharge": false,
+  "two_handed": false,
+  "versatile": false,
+  "wooden": false,
+  "bonus_ba": null,
+  "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json"
+}
+```
+<!-- END characters_inventory_items_show.json -->
+
+###### Copiar como cURL
+
+``` shell
+curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+  https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/02fd87a9-db9a-5a2e-8a95-b49e6be599c3.json \
+  Authorization:"Bearer $ACCESS_TOKEN"
 ```
 
 Atualizar item de inventário
