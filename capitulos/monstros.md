@@ -78,7 +78,7 @@ _Parâmetros opcionais de URL_:
         "ba": 3,
         "damage_description": "arma +0",
         "damage": "nil",
-        "damage_bonus": 0,
+        "damage_bonus": null,
         "weapon": true
       }
     ],
@@ -163,7 +163,7 @@ Obter monstro específico
       "ba": 3,
       "damage_description": "arma +0",
       "damage": "nil",
-      "damage_bonus": 0,
+      "damage_bonus": null,
       "weapon": true
     }
   ],
