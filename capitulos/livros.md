@@ -4,6 +4,7 @@ Livros
 Endpoints:
 
 - [Listar livros](#listar-livros)
+- [Listar meus livros](#listar-meus-livros)
 - [Obter livro específico](#obter-livro-específico)
 
 Listar livros
@@ -62,6 +63,43 @@ curl -s https://olddragon.com.br/livros.json
 
 ``` shell
 http https://olddragon.com.br/livros.json
+```
+
+Listar meus livros
+------------------
+
+**Autenticação obrigatória**: Este endpoint requer autenticação OAuth.
+
+* `GET /livros/meus.json` retorna todos os livros do usuário autenticado.
+
+_Parâmetros opcionais de URL_:
+
+* `category` - Filtrar por categoria. Exemplo: `category=core_book`.
+
+###### Exemplo de resposta JSON
+<!-- START digital_items_my.json -->
+```json
+[
+  {
+    "id": "lb1",
+    "type": "DigitalItem",
+    "title": "Livro I: Regras Básicas",
+    "url": "https://olddragon.com.br/livros/lb1.json"
+  }
+]
+```
+<!-- END digital_items_my.json -->
+
+###### Copiar como cURL
+
+``` shell
+curl -s https://olddragon.com.br/livros/meus.json -H "Authorization: Bearer <token>"
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/livros/meus.json Authorization:"Bearer <token>"
 ```
 
 Obter livro específico

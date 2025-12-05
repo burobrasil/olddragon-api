@@ -5,6 +5,30 @@ Endpoints:
 
 - [Listar classes](#listar-classes)
 - [Obter classe específica](#obter-classe-específica)
+- [Listar minhas classes](#listar-minhas-classes)
+- [Listar classes comunitárias](#listar-classes-comunitarias)
+
+Campos Obsoletos
+----------------
+
+> **Aviso de Depreciação**: Os seguintes campos serão removidos no futuro próximo. Por favor, migre para os novos campos.
+
+| Campo obsoleto | Substituição |
+|----------------|--------------|
+| `fontes[].digital_item_url` | Use o objeto `digital_item` com `id`, `name`, `url` |
+| `parent_class_url` | Use o objeto `parent_class` com `id`, `name`, `url` |
+| `levels` | Use os arrays `ba_progression`, `jp_progression`, `xp_progression` |
+
+Progressão de Níveis
+--------------------
+
+Os arrays de progressão representam os valores para cada nível do personagem:
+
+- `ba_progression`: Bônus de Ataque (BA) por nível
+- `jp_progression`: Jogada de Proteção (JP) por nível
+- `xp_progression`: Experiência (XP) necessária para cada nível
+
+A posição no array corresponde ao nível menos 1. Ou seja, posição 0 é nível 1, posição 1 é nível 2, e assim por diante.
 
 Listar classes
 --------------
@@ -31,6 +55,57 @@ _Parâmetros opcionais de URL_:
     "hp": 10,
     "high_level_hp_bonus": 2,
     "restrictions": {},
+    "ba_progression": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "jp_progression": [
+      5,
+      5,
+      6,
+      6,
+      8,
+      8,
+      10,
+      10,
+      11,
+      11,
+      13,
+      13,
+      14,
+      14,
+      16
+    ],
+    "xp_progression": [
+      0,
+      2000,
+      4000,
+      7000,
+      10000,
+      20000,
+      30000,
+      40000,
+      50000,
+      100000,
+      200000,
+      300000,
+      400000,
+      500000,
+      600000
+    ],
     "levels": {
       "1": {
         "ba": 1,
@@ -137,11 +212,21 @@ _Parâmetros opcionais de URL_:
       {
         "page": 28,
         "compact": false,
+        "digital_item": {
+          "id": "lb1",
+          "name": "Livro I: Regras Básicas",
+          "url": "https://olddragon.com.br/livros/lb1.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
+        "digital_item": {
+          "id": "srd",
+          "name": "SRD: Documento de Referência",
+          "url": "https://olddragon.com.br/livros/srd.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
@@ -159,6 +244,57 @@ _Parâmetros opcionais de URL_:
     "hp": 4,
     "high_level_hp_bonus": 1,
     "restrictions": {},
+    "ba_progression": [
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5
+    ],
+    "jp_progression": [
+      5,
+      5,
+      5,
+      5,
+      7,
+      7,
+      7,
+      7,
+      7,
+      10,
+      10,
+      10,
+      10,
+      13,
+      13
+    ],
+    "xp_progression": [
+      0,
+      2500,
+      5000,
+      8500,
+      11500,
+      23000,
+      33000,
+      43000,
+      53000,
+      106000,
+      210000,
+      320000,
+      430000,
+      540000,
+      650000
+    ],
     "levels": {
       "1": {
         "ba": 0,
@@ -263,11 +399,21 @@ _Parâmetros opcionais de URL_:
       {
         "page": 42,
         "compact": false,
+        "digital_item": {
+          "id": "lb1",
+          "name": "Livro I: Regras Básicas",
+          "url": "https://olddragon.com.br/livros/lb1.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
+        "digital_item": {
+          "id": "srd",
+          "name": "SRD: Documento de Referência",
+          "url": "https://olddragon.com.br/livros/srd.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
@@ -285,6 +431,57 @@ _Parâmetros opcionais de URL_:
     "hp": 4,
     "high_level_hp_bonus": 1,
     "restrictions": {},
+    "ba_progression": [
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5
+    ],
+    "jp_progression": [
+      5,
+      5,
+      5,
+      5,
+      7,
+      7,
+      7,
+      7,
+      7,
+      10,
+      10,
+      10,
+      10,
+      13,
+      13
+    ],
+    "xp_progression": [
+      0,
+      3000,
+      6000,
+      10000,
+      13000,
+      26000,
+      36000,
+      46000,
+      56000,
+      112000,
+      220000,
+      340000,
+      460000,
+      580000,
+      700000
+    ],
     "levels": {
       "1": {
         "ba": 0,
@@ -409,14 +606,29 @@ _Parâmetros opcionais de URL_:
       {
         "page": 45,
         "compact": false,
+        "digital_item": {
+          "id": "lb1",
+          "name": "Livro I: Regras Básicas",
+          "url": "https://olddragon.com.br/livros/lb1.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
+        "digital_item": {
+          "id": "srd",
+          "name": "SRD: Documento de Referência",
+          "url": "https://olddragon.com.br/livros/srd.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
+    "parent_class": {
+      "id": "mago",
+      "name": "Mago",
+      "url": "https://olddragon.com.br/classes/mago.json"
+    },
     "parent_class_url": "https://olddragon.com.br/classes/mago.json",
     "url": "https://olddragon.com.br/classes/necromante.json"
   }
@@ -455,6 +667,57 @@ Obter classe específica
   "hp": 4,
   "high_level_hp_bonus": 1,
   "restrictions": {},
+  "ba_progression": [
+    0,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    5,
+    5
+  ],
+  "jp_progression": [
+    5,
+    5,
+    5,
+    5,
+    7,
+    7,
+    7,
+    7,
+    7,
+    10,
+    10,
+    10,
+    10,
+    13,
+    13
+  ],
+  "xp_progression": [
+    0,
+    3000,
+    6000,
+    10000,
+    13000,
+    26000,
+    36000,
+    46000,
+    56000,
+    112000,
+    220000,
+    340000,
+    460000,
+    580000,
+    700000
+  ],
   "levels": {
     "1": {
       "ba": 0,
@@ -579,14 +842,29 @@ Obter classe específica
     {
       "page": 45,
       "compact": false,
+      "digital_item": {
+        "id": "lb1",
+        "name": "Livro I: Regras Básicas",
+        "url": "https://olddragon.com.br/livros/lb1.json"
+      },
       "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
     },
     {
       "page": null,
       "compact": true,
+      "digital_item": {
+        "id": "srd",
+        "name": "SRD: Documento de Referência",
+        "url": "https://olddragon.com.br/livros/srd.json"
+      },
       "digital_item_url": "https://olddragon.com.br/livros/srd.json"
     }
   ],
+  "parent_class": {
+    "id": "mago",
+    "name": "Mago",
+    "url": "https://olddragon.com.br/classes/mago.json"
+  },
   "parent_class_url": "https://olddragon.com.br/classes/mago.json",
   "url": "https://olddragon.com.br/classes/necromante.json"
 }
@@ -603,4 +881,371 @@ curl -s https://olddragon.com.br/classes/necromante.json
 
 ``` shell
 http https://olddragon.com.br/classes/necromante.json
+```
+
+Listar minhas classes
+----------------------
+
+* `GET /classes/minhas.json` retorna todas as classes e especializações personalizadas do usuário autenticado.
+
+**Requer autenticação.**
+
+###### Exemplo de resposta JSON
+<!-- START character_classes_my.json -->
+```json
+[
+  {
+    "id": "660e8400-e29b-41d4-a716-446655440000",
+    "type": "CharacterClass",
+    "name": "Classe Personalizada Um",
+    "flavor": "Uma classe de teste",
+    "access": "complete",
+    "armors_description": "",
+    "weapons_description": "",
+    "magic_items_description": "",
+    "hp": 6,
+    "high_level_hp_bonus": 1,
+    "restrictions": {},
+    "ba_progression": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "jp_progression": [
+      5,
+      5,
+      6,
+      6,
+      8,
+      8,
+      10,
+      10,
+      11,
+      11,
+      13,
+      13,
+      14,
+      14,
+      16
+    ],
+    "xp_progression": [
+      0,
+      2500,
+      5000,
+      8500,
+      11500,
+      23000,
+      33000,
+      43000,
+      53000,
+      106000,
+      210000,
+      320000,
+      430000,
+      540000,
+      650000
+    ],
+    "levels": {
+      "1": {
+        "ba": 1,
+        "jp": 5
+      },
+      "2": {
+        "ba": 2,
+        "jp": 5,
+        "xp": 2500
+      },
+      "3": {
+        "ba": 3,
+        "jp": 6,
+        "xp": 5000
+      },
+      "4": {
+        "ba": 4,
+        "jp": 6,
+        "xp": 8500
+      },
+      "5": {
+        "ba": 5,
+        "jp": 8,
+        "xp": 11500
+      },
+      "6": {
+        "ba": 6,
+        "jp": 8,
+        "xp": 23000
+      },
+      "7": {
+        "ba": 7,
+        "jp": 10,
+        "xp": 33000
+      },
+      "8": {
+        "ba": 8,
+        "jp": 10,
+        "xp": 43000
+      },
+      "9": {
+        "ba": 9,
+        "jp": 11,
+        "xp": 53000
+      },
+      "10": {
+        "ba": 10,
+        "jp": 11,
+        "xp": 106000
+      },
+      "11": {
+        "ba": 11,
+        "jp": 13,
+        "xp": 210000
+      },
+      "12": {
+        "ba": 12,
+        "jp": 13,
+        "xp": 320000
+      },
+      "13": {
+        "ba": 13,
+        "jp": 14,
+        "xp": 430000
+      },
+      "14": {
+        "ba": 14,
+        "jp": 14,
+        "xp": 540000
+      },
+      "15": {
+        "ba": 15,
+        "jp": 16,
+        "xp": 650000
+      }
+    },
+    "picture": null,
+    "thumb_picture": null,
+    "abilities": [],
+    "fontes": [],
+    "author": {
+      "handler": "jogador",
+      "url": "https://olddragon.com.br/perfis/jogador.json"
+    },
+    "parent_class": {
+      "id": "guerreiro",
+      "name": "Guerreiro",
+      "url": "https://olddragon.com.br/classes/guerreiro.json"
+    },
+    "parent_class_url": "https://olddragon.com.br/classes/guerreiro.json",
+    "url": "https://olddragon.com.br/classes/660e8400-e29b-41d4-a716-446655440000.json"
+  }
+]
+```
+<!-- END character_classes_my.json -->
+
+###### Copiar como cURL
+
+``` shell
+curl -s https://olddragon.com.br/classes/minhas.json -H "Authorization: Bearer <token>"
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/classes/minhas.json Authorization:"Bearer <token>"
+```
+
+Listar classes comunitárias
+----------------------------
+
+* `GET /classes/comunitarias.json` retorna todas as classes e especializações personalizadas compartilhadas pela comunidade (homebrew).
+
+_Parâmetros opcionais de URL_:
+
+* `name` - Filtro por nome. Exemplo: `name=Paladino`.
+* `order` - Ordenação (`name` ou `likes`). Padrão: `likes`.
+
+###### Exemplo de resposta JSON
+<!-- START character_classes_homebrew.json -->
+```json
+[
+  {
+    "id": "660e8400-e29b-41d4-a716-446655440001",
+    "type": "CharacterClass",
+    "name": "Classe Personalizada Dois",
+    "flavor": "Outra classe de teste",
+    "access": "complete",
+    "armors_description": "",
+    "weapons_description": "",
+    "magic_items_description": "",
+    "hp": 8,
+    "high_level_hp_bonus": 2,
+    "restrictions": {},
+    "ba_progression": [
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5
+    ],
+    "jp_progression": [
+      5,
+      5,
+      5,
+      5,
+      7,
+      7,
+      7,
+      7,
+      7,
+      10,
+      10,
+      10,
+      10,
+      13,
+      13
+    ],
+    "xp_progression": [
+      0,
+      3000,
+      6000,
+      10000,
+      13000,
+      26000,
+      36000,
+      46000,
+      56000,
+      112000,
+      220000,
+      340000,
+      460000,
+      580000,
+      700000
+    ],
+    "levels": {
+      "1": {
+        "ba": 0,
+        "jp": 5
+      },
+      "2": {
+        "ba": 1,
+        "jp": 5,
+        "xp": 3000
+      },
+      "3": {
+        "ba": 1,
+        "jp": 5,
+        "xp": 6000
+      },
+      "4": {
+        "ba": 1,
+        "jp": 5,
+        "xp": 10000
+      },
+      "5": {
+        "ba": 2,
+        "jp": 7,
+        "xp": 13000
+      },
+      "6": {
+        "ba": 2,
+        "jp": 7,
+        "xp": 26000
+      },
+      "7": {
+        "ba": 2,
+        "jp": 7,
+        "xp": 36000
+      },
+      "8": {
+        "ba": 3,
+        "jp": 7,
+        "xp": 46000
+      },
+      "9": {
+        "ba": 3,
+        "jp": 7,
+        "xp": 56000
+      },
+      "10": {
+        "ba": 3,
+        "jp": 10,
+        "xp": 112000
+      },
+      "11": {
+        "ba": 4,
+        "jp": 10,
+        "xp": 220000
+      },
+      "12": {
+        "ba": 4,
+        "jp": 10,
+        "xp": 340000
+      },
+      "13": {
+        "ba": 4,
+        "jp": 10,
+        "xp": 460000
+      },
+      "14": {
+        "ba": 5,
+        "jp": 13,
+        "xp": 580000
+      },
+      "15": {
+        "ba": 5,
+        "jp": 13,
+        "xp": 700000
+      }
+    },
+    "picture": null,
+    "thumb_picture": null,
+    "abilities": [],
+    "fontes": [],
+    "author": {
+      "handler": "outro_jogador",
+      "url": "https://olddragon.com.br/perfis/outro_jogador.json"
+    },
+    "parent_class": {
+      "id": "mago",
+      "name": "Mago",
+      "url": "https://olddragon.com.br/classes/mago.json"
+    },
+    "parent_class_url": "https://olddragon.com.br/classes/mago.json",
+    "url": "https://olddragon.com.br/classes/660e8400-e29b-41d4-a716-446655440001.json"
+  }
+]
+```
+<!-- END character_classes_homebrew.json -->
+
+###### Copiar como cURL
+
+``` shell
+curl -s https://olddragon.com.br/classes/comunitarias.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/classes/comunitarias.json
 ```

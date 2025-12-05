@@ -74,12 +74,12 @@ Use essas informações para:
 #### cURL
 ```bash
 curl -H "Authorization: Bearer TOKEN" \
-     https://olddragon.com.br/meus-livros.json
+     https://olddragon.com.br/livros/meus.json
 ```
 
 #### HTTPie
 ```bash
-http https://olddragon.com.br/meus-livros.json \
+http https://olddragon.com.br/livros/meus.json \
      Authorization:"Bearer TOKEN"
 ```
 

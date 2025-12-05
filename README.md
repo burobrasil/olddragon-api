@@ -132,6 +132,7 @@ A API suporta CORS para permitir chamadas de navegadores web:
 - [Livros](capitulos/livros.md) - `/livros.json`
 - [Magias](capitulos/magias.md) - `/magias.json`
 - [Monstros](capitulos/monstros.md) - `/monstros.json`
+- [Perfis](capitulos/perfis.md) - `/perfis/:handler.json`
 - [Raças](capitulos/racas.md) - `/racas.json`
 
 **Nota**: Campanhas e personagens específicos (`/campanhas/ID.json` e `/personagens/ID.json`) podem ser acessados sem autenticação.
