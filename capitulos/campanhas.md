@@ -7,6 +7,16 @@ Endpoints:
 - [Obter campanha específica](#obter-campanha-específica)
 - [Listar personagens em uma campanha](#listar-personagens-em-uma-campanha)
 
+Campos Obsoletos
+----------------
+
+> **Aviso de Depreciação**: Os seguintes campos serão removidos no futuro próximo. Por favor, migre para os novos campos de objeto aninhado.
+
+| Campo obsoleto | Substituição |
+|----------------|--------------|
+| `personagens[].race` | Use o objeto `character_race` com `id`, `name`, `url` |
+| `personagens[].class` | Use o objeto `character_class` com `id`, `name`, `url` |
+
 Listar campanhas
 ----------------
 
@@ -29,6 +39,10 @@ _Parâmetros opcionais de URL_:
     "intro": "Em um mundo inexplorado, apenas os bravos se aventuram. Descubra os segredos de Valansia e torne-se um herói!\n",
     "created_at": "2023-01-01T00:00:00.000",
     "updated_at": "2023-01-01T00:00:00.000",
+    "owner": {
+      "handler": "jogador",
+      "url": "https://olddragon.com.br/perfis/jogador.json"
+    },
     "personagens": [
       {
         "id": "59a2adaf-96e6-4569-827b-a172982cf13c",
@@ -45,6 +59,16 @@ _Parâmetros opcionais de URL_:
         "ac": 15,
         "created_at": "2023-01-01T00:00:00.000",
         "updated_at": "2023-01-01T00:00:00.000",
+        "character_race": {
+          "id": "humano",
+          "name": "Humano",
+          "url": "https://olddragon.com.br/racas/humano.json"
+        },
+        "character_class": {
+          "id": "guerreiro",
+          "name": "Guerreiro",
+          "url": "https://olddragon.com.br/classes/guerreiro.json"
+        },
         "race": "humano",
         "class": "guerreiro",
         "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json"
@@ -86,6 +110,10 @@ Obter campanha específica
   "intro": "Em um mundo inexplorado, apenas os bravos se aventuram. Descubra os segredos de Valansia e torne-se um herói!\n",
   "created_at": "2023-01-01T00:00:00.000",
   "updated_at": "2023-01-01T00:00:00.000",
+  "owner": {
+    "handler": "jogador",
+    "url": "https://olddragon.com.br/perfis/jogador.json"
+  },
   "personagens": [
     {
       "id": "59a2adaf-96e6-4569-827b-a172982cf13c",
@@ -102,6 +130,16 @@ Obter campanha específica
       "ac": 15,
       "created_at": "2023-01-01T00:00:00.000",
       "updated_at": "2023-01-01T00:00:00.000",
+      "character_race": {
+        "id": "humano",
+        "name": "Humano",
+        "url": "https://olddragon.com.br/racas/humano.json"
+      },
+      "character_class": {
+        "id": "guerreiro",
+        "name": "Guerreiro",
+        "url": "https://olddragon.com.br/classes/guerreiro.json"
+      },
       "race": "humano",
       "class": "guerreiro",
       "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json"
@@ -471,12 +509,31 @@ Listar personagens em uma campanha
         "selection_key": "jpc"
       }
     ],
+    "character_race": {
+      "id": "humano",
+      "name": "Humano",
+      "url": "https://olddragon.com.br/racas/humano.json"
+    },
     "character_race_name": "Humano",
     "character_race_url": "https://olddragon.com.br/racas/humano.json",
+    "character_class": {
+      "id": "guerreiro",
+      "name": "Guerreiro",
+      "url": "https://olddragon.com.br/classes/guerreiro.json"
+    },
     "character_class_name": "Guerreiro",
     "character_class_url": "https://olddragon.com.br/classes/guerreiro.json",
+    "campaign": {
+      "id": "261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4",
+      "name": "Bandeirantes de Valansia",
+      "url": "https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json"
+    },
     "campaign_name": "Bandeirantes de Valansia",
     "campaign_url": "https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json",
+    "owner": {
+      "handler": "jogador",
+      "url": "https://olddragon.com.br/perfis/jogador.json"
+    },
     "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json"
   }
 ]

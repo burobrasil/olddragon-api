@@ -11,6 +11,17 @@ Endpoints:
   - [Atualizar item de inventário](#atualizar-item-de-inventário)
   - [Remover item de inventário](#remover-item-de-inventário)
 
+Campos Obsoletos
+----------------
+
+> **Aviso de Depreciação**: Os seguintes campos serão removidos no futuro próximo. Por favor, migre para os novos campos de objeto aninhado.
+
+| Campo obsoleto | Substituição |
+|----------------|--------------|
+| `character_race_name`, `character_race_url` | Use o objeto `character_race` com `id`, `name`, `url` |
+| `character_class_name`, `character_class_url` | Use o objeto `character_class` com `id`, `name`, `url` |
+| `campaign_name`, `campaign_url` | Use o objeto `campaign` com `id`, `name`, `url` |
+
 Listar personagens
 ------------------
 
@@ -362,12 +373,31 @@ _Parâmetros opcionais de URL_:
         "selection_key": "jpc"
       }
     ],
+    "character_race": {
+      "id": "humano",
+      "name": "Humano",
+      "url": "https://olddragon.com.br/racas/humano.json"
+    },
     "character_race_name": "Humano",
     "character_race_url": "https://olddragon.com.br/racas/humano.json",
+    "character_class": {
+      "id": "guerreiro",
+      "name": "Guerreiro",
+      "url": "https://olddragon.com.br/classes/guerreiro.json"
+    },
     "character_class_name": "Guerreiro",
     "character_class_url": "https://olddragon.com.br/classes/guerreiro.json",
+    "campaign": {
+      "id": "261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4",
+      "name": "Bandeirantes de Valansia",
+      "url": "https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json"
+    },
     "campaign_name": "Bandeirantes de Valansia",
     "campaign_url": "https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json",
+    "owner": {
+      "handler": "jogador",
+      "url": "https://olddragon.com.br/perfis/jogador.json"
+    },
     "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json"
   }
 ]
@@ -733,12 +763,31 @@ Obter personagem específico
       "selection_key": "jpc"
     }
   ],
+  "character_race": {
+    "id": "humano",
+    "name": "Humano",
+    "url": "https://olddragon.com.br/racas/humano.json"
+  },
   "character_race_name": "Humano",
   "character_race_url": "https://olddragon.com.br/racas/humano.json",
+  "character_class": {
+    "id": "guerreiro",
+    "name": "Guerreiro",
+    "url": "https://olddragon.com.br/classes/guerreiro.json"
+  },
   "character_class_name": "Guerreiro",
   "character_class_url": "https://olddragon.com.br/classes/guerreiro.json",
+  "campaign": {
+    "id": "261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4",
+    "name": "Bandeirantes de Valansia",
+    "url": "https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json"
+  },
   "campaign_name": "Bandeirantes de Valansia",
   "campaign_url": "https://olddragon.com.br/campanhas/261ac8f6-6fbc-4b1e-be4a-6e5ee7d8e4b4.json",
+  "owner": {
+    "handler": "jogador",
+    "url": "https://olddragon.com.br/perfis/jogador.json"
+  },
   "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c.json"
 }
 ```
@@ -1019,7 +1068,7 @@ Criar item de inventário
 <!-- START characters_inventory_items_create.json -->
 ```json
 {
-  "id": "3d3706f8-0b1c-412a-bec0-6f2c87bdc2f5",
+  "id": "00000000-0000-4000-a000-000000000001",
   "position": 9,
   "quantity": 1,
   "equipped": true,
@@ -1051,7 +1100,7 @@ Criar item de inventário
   "versatile": false,
   "wooden": false,
   "bonus_ba": null,
-  "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/3d3706f8-0b1c-412a-bec0-6f2c87bdc2f5.json"
+  "url": "https://olddragon.com.br/personagens/59a2adaf-96e6-4569-827b-a172982cf13c/inventario/00000000-0000-4000-a000-000000000001.json"
 }
 ```
 <!-- END characters_inventory_items_create.json -->

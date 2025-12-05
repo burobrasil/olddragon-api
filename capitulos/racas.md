@@ -3,8 +3,19 @@ Raças
 
 Endpoints:
 
-- [Listar racas](#listar-racas)
+- [Listar raças](#listar-racas)
 - [Obter raça específica](#obter-raca-específica)
+- [Listar minhas raças](#listar-minhas-racas)
+- [Listar raças comunitárias](#listar-racas-comunitarias)
+
+Campos Obsoletos
+----------------
+
+> **Aviso de Depreciação**: Os seguintes campos serão removidos no futuro próximo. Por favor, migre para os novos campos de objeto aninhado.
+
+| Campo obsoleto | Substituição |
+|----------------|--------------|
+| `fontes[].digital_item_url` | Use o objeto `digital_item` com `id`, `name`, `url` |
 
 Listar raças
 --------------
@@ -70,11 +81,21 @@ _Parâmetros opcionais de URL_:
       {
         "page": 22,
         "compact": false,
+        "digital_item": {
+          "id": "lb1",
+          "name": "Livro I: Regras Básicas",
+          "url": "https://olddragon.com.br/livros/lb1.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
+        "digital_item": {
+          "id": "srd",
+          "name": "SRD: Documento de Referência",
+          "url": "https://olddragon.com.br/livros/srd.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
@@ -134,11 +155,21 @@ _Parâmetros opcionais de URL_:
       {
         "page": 20,
         "compact": false,
+        "digital_item": {
+          "id": "lb1",
+          "name": "Livro I: Regras Básicas",
+          "url": "https://olddragon.com.br/livros/lb1.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
+        "digital_item": {
+          "id": "srd",
+          "name": "SRD: Documento de Referência",
+          "url": "https://olddragon.com.br/livros/srd.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
@@ -187,11 +218,21 @@ _Parâmetros opcionais de URL_:
       {
         "page": 18,
         "compact": false,
+        "digital_item": {
+          "id": "lb1",
+          "name": "Livro I: Regras Básicas",
+          "url": "https://olddragon.com.br/livros/lb1.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
       },
       {
         "page": null,
         "compact": true,
+        "digital_item": {
+          "id": "srd",
+          "name": "SRD: Documento de Referência",
+          "url": "https://olddragon.com.br/livros/srd.json"
+        },
         "digital_item_url": "https://olddragon.com.br/livros/srd.json"
       }
     ],
@@ -271,11 +312,21 @@ Obter raca específica
     {
       "page": 22,
       "compact": false,
+      "digital_item": {
+        "id": "lb1",
+        "name": "Livro I: Regras Básicas",
+        "url": "https://olddragon.com.br/livros/lb1.json"
+      },
       "digital_item_url": "https://olddragon.com.br/livros/lb1.json"
     },
     {
       "page": null,
       "compact": true,
+      "digital_item": {
+        "id": "srd",
+        "name": "SRD: Documento de Referência",
+        "url": "https://olddragon.com.br/livros/srd.json"
+      },
       "digital_item_url": "https://olddragon.com.br/livros/srd.json"
     }
   ],
@@ -294,6 +345,113 @@ curl -s https://olddragon.com.br/racas/anao.json
 
 ``` shell
 http https://olddragon.com.br/racas/anao.json
+```
+
+Listar minhas raças
+--------------------
+
+* `GET /racas/minhas.json` retorna todas as raças personalizadas do usuário autenticado.
+
+**Requer autenticação.**
+
+###### Exemplo de resposta JSON
+<!-- START character_races_my.json -->
+```json
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "type": "CharacterRace",
+    "name": "Raça Personalizada Um",
+    "flavor": "Uma raça de teste",
+    "access": "complete",
+    "description": "Esta é uma raça customizada criada por um jogador para testes.",
+    "personality": "",
+    "adventure": "",
+    "mv": 9,
+    "mve": null,
+    "mvn": null,
+    "mvv": null,
+    "infravision": 0,
+    "alignment_tendency": null,
+    "picture": null,
+    "thumb_picture": null,
+    "abilities": [],
+    "fontes": [],
+    "author": {
+      "handler": "jogador",
+      "url": "https://olddragon.com.br/perfis/jogador.json"
+    },
+    "url": "https://olddragon.com.br/racas/550e8400-e29b-41d4-a716-446655440000.json"
+  }
+]
+```
+<!-- END character_races_my.json -->
+
+###### Copiar como cURL
+
+``` shell
+curl -s https://olddragon.com.br/racas/minhas.json -H "Authorization: Bearer <token>"
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/racas/minhas.json Authorization:"Bearer <token>"
+```
+
+Listar raças comunitárias
+--------------------------
+
+* `GET /racas/comunitarias.json` retorna todas as raças personalizadas compartilhadas pela comunidade (homebrew).
+
+_Parâmetros opcionais de URL_:
+
+* `name` - Filtro por nome. Exemplo: `name=Vampiro`.
+* `order` - Ordenação (`name` ou `likes`). Padrão: `likes`.
+
+###### Exemplo de resposta JSON
+<!-- START character_races_homebrew.json -->
+```json
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "type": "CharacterRace",
+    "name": "Raça Personalizada Dois",
+    "flavor": "Outra raça de teste",
+    "access": "complete",
+    "description": "Esta é outra raça customizada criada por um jogador para testes.",
+    "personality": "",
+    "adventure": "",
+    "mv": 9,
+    "mve": null,
+    "mvn": null,
+    "mvv": null,
+    "infravision": 0,
+    "alignment_tendency": null,
+    "picture": null,
+    "thumb_picture": null,
+    "abilities": [],
+    "fontes": [],
+    "author": {
+      "handler": "outro_jogador",
+      "url": "https://olddragon.com.br/perfis/outro_jogador.json"
+    },
+    "url": "https://olddragon.com.br/racas/550e8400-e29b-41d4-a716-446655440001.json"
+  }
+]
+```
+<!-- END character_races_homebrew.json -->
+
+###### Copiar como cURL
+
+``` shell
+curl -s https://olddragon.com.br/racas/comunitarias.json
+```
+
+###### Copiar como HTTPie
+
+``` shell
+http https://olddragon.com.br/racas/comunitarias.json
 ```
 
 ### Habilidades Raciais (Abilities)
