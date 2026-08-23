@@ -190,18 +190,18 @@ http "https://olddragon.com.br/monstros.json?concepts[]=humanoide&sizes[]=medio"
 
 #### cURL
 ```bash
-curl -X PUT \
+curl -X PATCH \
      -H "Authorization: Bearer SEU_TOKEN" \
      -H "Content-Type: application/json" \
      -d '{"health_points": 15}' \
-     https://olddragon.com.br/personagens/ID_PERSONAGEM/pv.json
+     https://olddragon.com.br/personagens/ID_PERSONAGEM.json
 ```
 
 #### HTTPie
 ```bash
-http PUT https://olddragon.com.br/personagens/ID_PERSONAGEM/pv.json \
+http PATCH https://olddragon.com.br/personagens/ID_PERSONAGEM.json \
      Authorization:"Bearer SEU_TOKEN" \
-     health_points=15
+     health_points:=15
 ```
 
 ## Suporte
