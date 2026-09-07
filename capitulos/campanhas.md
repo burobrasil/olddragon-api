@@ -182,6 +182,7 @@ Listar personagens em uma campanha
     "health_points": 30,
     "max_hp": 30,
     "injuries": 0,
+    "dead": false,
     "forca": 15,
     "destreza": 14,
     "constituicao": 12,

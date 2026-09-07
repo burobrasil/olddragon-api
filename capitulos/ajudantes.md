@@ -46,6 +46,7 @@ _Parâmetros opcionais de URL_:
     "health_points": 5,
     "max_hp": 5,
     "injuries": 0,
+    "dead": false,
     "forca": 10,
     "destreza": 12,
     "constituicao": 14,
@@ -161,6 +162,7 @@ Obter ajudante específico
   "health_points": 5,
   "max_hp": 5,
   "injuries": 0,
+  "dead": false,
   "forca": 10,
   "destreza": 12,
   "constituicao": 14,
@@ -278,6 +280,7 @@ Atualizar atributos de ajudante
 **Parâmetros disponíveis**: Você pode atualizar um ou mais dos seguintes atributos em uma única requisição:
 
 * `health_points`: Pontos de Vida (PV) atuais do ajudante, entre 0 e o máximo de PV do ajudante (legível em `max_hp` no ajudante).
+* `dead`: `true` marca o ajudante como morto; `false` desfaz a marca. Com 0 PV e sem a marca, o ajudante está Morrendo (teste de Agonizar pendente).
 * `injuries`: Ferimentos do ajudante, no mínimo 0.
 * `heroic_action_used`: Se a ação heroica já foi utilizada (true/false).
 * `money_gp`: Peças de ouro (PO) do ajudante, no mínimo 0.
