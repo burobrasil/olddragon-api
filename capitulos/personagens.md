@@ -46,6 +46,7 @@ _Parâmetros opcionais de URL_:
     "health_points": 30,
     "max_hp": 30,
     "injuries": 0,
+    "dead": false,
     "forca": 15,
     "destreza": 14,
     "constituicao": 12,
@@ -436,6 +437,7 @@ Obter personagem específico
   "health_points": 30,
   "max_hp": 30,
   "injuries": 0,
+  "dead": false,
   "forca": 15,
   "destreza": 14,
   "constituicao": 12,
@@ -845,6 +847,7 @@ Atualizar atributos de personagem
 **Parâmetros disponíveis**: Você pode atualizar um ou mais dos seguintes atributos em uma única requisição:
 
 * `health_points`: Pontos de Vida (PV) atuais do personagem, entre 0 e o máximo de PV do personagem (legível em `max_hp` no personagem).
+* `dead`: `true` marca o personagem como morto; `false` desfaz a marca. Com 0 PV e sem a marca, o personagem está Morrendo (teste de Agonizar pendente).
 * `experience_points`: Experiência (XP) atuais do personagem, no mínimo 0.
 * `money_gp`: Peças de ouro (PO) do personagem, no mínimo 0.
 * `money_sp`: Peças de prata (PP) do personagem, no mínimo 0.
